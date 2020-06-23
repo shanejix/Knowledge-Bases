@@ -6,3 +6,5 @@ project manager
 GitLens — Git supercharged
 - https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
 
+Material Icon Theme
+- https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
