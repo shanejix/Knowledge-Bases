@@ -1,9 +1,12 @@
 # ubuntu 18.04 space small
 
-- 下载字体文件https://github.com/tonsky/FiraCode#download-v1206–how-to-install–troubleshooting–news–updates
-    解压压缩文件并打开ttf文件夹，双击安装字体文件，安装完所有的字体文件
+- 下载字体文件
+> https://github.com/tonsky/FiraCode#download-v1206–how-to-install–troubleshooting–news–updates
+  
+-  打开ttf文件夹，双击安装完所有的字体文件
 -  打开VSCODE的settings.json文件
-    注释掉原来的editor.fontFamily配置行，注释是为了后面恢复方便
+> home><user>>.config>code>User>setting.json
+
 -  添加字体文件配置
 
 ```js

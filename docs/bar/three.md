@@ -20,3 +20,8 @@
 - nvm
 
 - nrm
+
+
+zsh
+
+on-my-zsh
