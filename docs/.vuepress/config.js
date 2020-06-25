@@ -2,44 +2,48 @@ module.exports = {
   title: 'Knowledge-Bases',
   description: 'Just playing around',
   themeConfig: {
+    // 顶部导航兰
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
       { text: 'External', link: 'https://google.com' }
     ],
+    // 左侧导航兰
     sidebar: [
       '/',
       {
-        title: 'foo',
-        path: '/foo/',
+        title: '常用软件',
+        path: '/soft/current',
+
+      },
+      {
+        title: 'VSCode 相关',
+        path: '/vscode/',
         children: [
           {
-            title: 'one',
-            path: '/foo/one',
+            title: 'vscode常用插件',
+            path: '/vscode/vscode-plugins',
           },
-          {
-            title: 'two',
-            path: '/foo/two',
-          },
+          // {
+          //   title: 'two',
+          //   path: '/foo/two',
+          // },
         ]
       },
       {
-        title: 'bar',
-        path: '/bar',
+        title: 'Ubuntu 相关',
+        path: '/ubuntu',
         children: [
           {
-            title: 'three',
-            path: '/bar/three',
+            title: 'ubuntu中vscode字体空格缩小问题',
+            path: '/ubuntu/ubuntu-space-Issues',
           },
           {
-            title: 'four',
-            path: '/bar/four',
+            title: 'ubuntu 18.04下 vscode中ctrl+alt+up/down热键冲突解决',
+            path: '/ubuntu/ctrl-alt-arrow',
           }
         ]
       },
     ],
-
-
-
   }
 };

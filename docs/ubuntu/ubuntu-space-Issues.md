@@ -13,10 +13,14 @@
 	// 以下两行必须
    "editor.fontFamily": "'Fira Code'",
    "editor.fontLigatures": true,
-    //下面四行分别设置不同粗细的字体，选择一种
-    // "editor.fontWeight": "300",// Light
-   // "editor.fontWeight": "400", // Regular
-   "editor.fontWeight": "500", // Medium
-   // "editor.fontWeight": "600", // Bold
+   //下面四行分别设置不同粗细的字体，选择一种
+   // Light
+   // "editor.fontWeight": "300",
+   // Regular
+   // "editor.fontWeight": "400", 
+   // Medium
+   "editor.fontWeight": "500",
+   // Bold
+   // "editor.fontWeight": "600", 
 
 ```
