@@ -20,7 +20,7 @@ module.exports = {
         path: '/VSCode/',
         children: [
           {
-            title: 'VSCode常用插件',
+            title: 'plugins',
             path: '/vscode/vscode-plugins',
           },
           // {
@@ -34,12 +34,16 @@ module.exports = {
         path: '/ubuntu',
         children: [
           {
-            title: 'ubuntu 18.04 下 VSCode 中 ctrl+alt+up/down 热键冲突解决',
+            title: 'ctrl-alt-arrow',
             path: '/ubuntu/ctrl-alt-arrow',
           },
           {
-            title: 'ubuntu 中 VSCode 字体空格缩小问题',
+            title: 'space',
             path: '/ubuntu/space',
+          },
+          {
+            title: 'theme',
+            path: '/ubuntu/theme',
           },
         ]
       },

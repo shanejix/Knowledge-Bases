@@ -9,7 +9,7 @@
 
 -  添加字体文件配置
 
-```js
+```
 	// 以下两行必须
    "editor.fontFamily": "'Fira Code'",
    "editor.fontLigatures": true,
