@@ -1,6 +1,6 @@
 # 常用软件
 
-- vscode 
+- VSCode 
 
 - gitkraken
 
@@ -21,7 +21,8 @@
 
 - nrm
 
+# 命令行
 
-zsh
+- zsh
 
-on-my-zsh
+- on-my-zsh

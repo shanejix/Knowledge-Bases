@@ -1,4 +1,4 @@
-# vscode  plugins
+# VSCode  plugins
 
 project manager
 - https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager
@@ -10,4 +10,4 @@ Material Icon Theme
 - https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
 
 Prettier - Code formatter
-- https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+- https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-VSCode

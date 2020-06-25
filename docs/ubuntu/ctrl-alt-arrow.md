@@ -1,4 +1,4 @@
-# ubuntu 18.04下 vscode中ctrl+alt+up/down热键冲突解决
+# ubuntu 18.04下 VSCode中ctrl+alt+up/down热键冲突解决
 
 ```bash
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['']"

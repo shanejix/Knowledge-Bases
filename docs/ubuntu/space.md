@@ -4,7 +4,7 @@
 > https://github.com/tonsky/FiraCode#download-v1206–how-to-install–troubleshooting–news–updates
   
 -  打开ttf文件夹，双击安装完所有的字体文件
--  打开VSCODE的settings.json文件
+-  打开VSCode的settings.json文件
 > home><user>>.config>code>User>setting.json
 
 -  添加字体文件配置

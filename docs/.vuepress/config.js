@@ -10,18 +10,17 @@ module.exports = {
     ],
     // 左侧导航兰
     sidebar: [
-      '/',
+      // '/',
       {
-        title: '常用软件',
-        path: '/soft/current',
-
+        title: 'Favorite APP',
+        path: '/favoriteApp/current',
       },
       {
         title: 'VSCode 相关',
-        path: '/vscode/',
+        path: '/VSCode/',
         children: [
           {
-            title: 'vscode常用插件',
+            title: 'VSCode常用插件',
             path: '/vscode/vscode-plugins',
           },
           // {
@@ -35,13 +34,13 @@ module.exports = {
         path: '/ubuntu',
         children: [
           {
-            title: 'ubuntu中vscode字体空格缩小问题',
-            path: '/ubuntu/ubuntu-space-Issues',
+            title: 'ubuntu 18.04 下 VSCode 中 ctrl+alt+up/down 热键冲突解决',
+            path: '/ubuntu/ctrl-alt-arrow',
           },
           {
-            title: 'ubuntu 18.04下 vscode中ctrl+alt+up/down热键冲突解决',
-            path: '/ubuntu/ctrl-alt-arrow',
-          }
+            title: 'ubuntu 中 VSCode 字体空格缩小问题',
+            path: '/ubuntu/space',
+          },
         ]
       },
     ],
