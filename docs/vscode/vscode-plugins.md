@@ -11,3 +11,6 @@ Material Icon Theme
 
 Prettier - Code formatter
 - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-VSCode
+
+Windows Default Keybindings
+- https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows
