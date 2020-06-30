@@ -14,3 +14,6 @@ Prettier - Code formatter
 
 Windows Default Keybindings
 - https://marketplace.visualstudio.com/items?itemName=smcpeak.default-keys-windows
+
+TODO Highlight
+- https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
