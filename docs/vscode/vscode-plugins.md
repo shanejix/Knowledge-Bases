@@ -45,3 +45,7 @@ WakaTime
 TabNine
 - https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
 
+ESLint
+- https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
+
