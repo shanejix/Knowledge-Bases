@@ -22,8 +22,12 @@ module.exports = {
           collapsable: false,
           children: [
             {
-              title: "plugins",
-              path: "/vscode/vscode-plugins",
+              title: "vscode_plugins",
+              path: "/vscode/vscode_plugins",
+            },
+            {
+              title: "enable_preview",
+              path: "/vscode/enable_preview",
             },
           ],
         },
@@ -31,8 +35,8 @@ module.exports = {
           title: "Ubuntu 相关",
           collapsable: false,
           children: [
-            ["/ubuntu/ctrl-alt-arrow", "ctrl-alt-arrow"],
-            ["/ubuntu/space", "space"],
+            ["/ubuntu/ctrl_alt_arrow_conflict", "ctrl_alt_arrow_conflict"],
+            ["/ubuntu/space_small", "space_small"],
             ["/ubuntu/theme", "theme"],
           ],
         },
