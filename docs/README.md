@@ -4,7 +4,7 @@ heroImage: /yoyo.jpg
 heroText: Knowledge-Bases
 tagline: xxxxx
 actionText: 点击 → Knowledge-Bases
-actionLink: /main/favoriteApp/current
+actionLink: /main/
 features:
   - title: 一处坑
     details: 坑啊

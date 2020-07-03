@@ -1,7 +1,7 @@
 module.exports = {
   title: "Knowledge-Bases",
   description: "Just playing around",
-  // base: "/Knowledge-Bases/",
+  base: "/Knowledge-Bases/",
   // base: "/",
   head: [
     ["link", { rel: "icon", href: "/yoyo.jpg" }],
@@ -23,7 +23,7 @@ module.exports = {
         {
           title: "Favorite APP",
           collapsable: false,
-          path: "/favoriteApp/current",
+          path: "favoriteApp/current",
           // children: [["/favoriteApp/current", "front end"]],
         },
         {
@@ -32,11 +32,11 @@ module.exports = {
           children: [
             {
               title: "vscode_plugins",
-              path: "/vscode/vscode_plugins",
+              path: "vscode/vscode_plugins",
             },
             {
               title: "enable_preview",
-              path: "/vscode/enable_preview",
+              path: "vscode/enable_preview",
             },
           ],
         },
@@ -44,9 +44,9 @@ module.exports = {
           title: "Ubuntu 相关",
           collapsable: false,
           children: [
-            ["/ubuntu/ctrl_alt_arrow_conflict", "ctrl_alt_arrow_conflict"],
-            ["/ubuntu/space_small", "space_small"],
-            ["/ubuntu/theme", "theme"],
+            ["ubuntu/ctrl_alt_arrow_conflict", "ctrl_alt_arrow_conflict"],
+            ["ubuntu/space_small", "space_small"],
+            ["ubuntu/theme", "theme"],
           ],
         },
       ],
