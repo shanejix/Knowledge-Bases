@@ -1,6 +1,15 @@
 module.exports = {
   title: "Knowledge-Bases",
   description: "Just playing around",
+  // base: "/Knowledge-Bases/",
+  // base: "/",
+  head: [
+    ["link", { rel: "icon", href: "/yoyo.jpg" }],
+    // [
+    //   "script",
+    //   { src: "https://hm.baidu.com/hm.js?4484bd6412288feacc311fd7f2054116" },
+    // ],
+  ],
   themeConfig: {
     // 顶部导航兰
     nav: [
@@ -10,7 +19,7 @@ module.exports = {
     ],
     // 左侧导航兰
     sidebar: {
-      "/": [
+      "/main/": [
         {
           title: "Favorite APP",
           collapsable: false,
@@ -43,4 +52,8 @@ module.exports = {
       ],
     },
   },
+  markdown: {
+    lineNumbers: true,
+  },
+  plugins: [],
 };
