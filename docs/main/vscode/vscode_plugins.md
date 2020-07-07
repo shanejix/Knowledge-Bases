@@ -48,4 +48,7 @@ TabNine
 ESLint
 - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
+Bookmarks
+- https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
+
 
