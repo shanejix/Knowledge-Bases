@@ -54,7 +54,7 @@ module.exports = {
           collapsable: false,
           children: [
             [
-              "other/&#x(unicode编码后的汉字)JS转换方法",
+              "other/unicode编码后的汉字JS转换方法.md",
               "&#x(unicode编码后的汉字)JS转换方法",
             ],
           ],
