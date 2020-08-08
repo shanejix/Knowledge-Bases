@@ -1,8 +1,8 @@
 module.exports = {
   title: "Knowledge-Bases",
   description: "Just playing around",
-  base: "/Knowledge-Bases",
-  // base: "/",
+  // base: "/Knowledge-Bases/",
+  base: "./",
   head: [
     ["link", { rel: "icon", href: "/yoyo.jpg" }],
     // [
