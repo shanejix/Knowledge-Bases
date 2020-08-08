@@ -49,6 +49,16 @@ module.exports = {
             ["ubuntu/theme", "theme"],
           ],
         },
+        {
+          title: "Other 其他",
+          collapsable: false,
+          children: [
+            [
+              "other/&#x(unicode编码后的汉字)JS转换方法",
+              "&#x(unicode编码后的汉字)JS转换方法",
+            ],
+          ],
+        },
       ],
     },
   },
