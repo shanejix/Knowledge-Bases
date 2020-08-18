@@ -54,7 +54,7 @@ module.exports = {
           collapsable: true,
           children: [
             [
-              "FrontEnd/useful_ebsites",
+              "FrontEnd/useful_websites",
               "useful_websites_every_front-end_developer_hould_know_about",
             ],
           ],
