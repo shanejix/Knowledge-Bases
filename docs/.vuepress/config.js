@@ -1,8 +1,8 @@
 module.exports = {
   title: "Knowledge-Bases",
   description: "Just playing around",
-  base: "/Knowledge-Bases",
-  // base: "/",
+  // base: "/Knowledge-Bases/",
+  base: "/",
   head: [
     ["link", { rel: "icon", href: "/yoyo.jpg" }],
     // [
@@ -47,6 +47,16 @@ module.exports = {
             ["ubuntu/ctrl_alt_arrow_conflict", "ctrl_alt_arrow_conflict"],
             ["ubuntu/space_small", "space_small"],
             ["ubuntu/theme", "theme"],
+          ],
+        },
+        {
+          title: "Other 其他",
+          collapsable: false,
+          children: [
+            [
+              "other/unicode编码后的汉字JS转换方法.md",
+              "&#x(unicode编码后的汉字)JS转换方法",
+            ],
           ],
         },
       ],
