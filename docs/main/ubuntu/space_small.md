@@ -1,7 +1,7 @@
 # ubuntu 18.04 space small
 
 - 下载字体文件
-> https://github.com/tonsky/FiraCode#download-v1206–how-to-install–troubleshooting–news–updates
+> [https://github.com/tonsky/FiraCode#download-v1206–how-to-install–troubleshooting–news–updates](https://github.com/tonsky/FiraCode#download-v1206–how-to-install–troubleshooting–news–updates)
   
 -  打开ttf文件夹，双击安装完所有的字体文件
 -  打开VSCode的settings.json文件
