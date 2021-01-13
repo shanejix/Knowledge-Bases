@@ -23,7 +23,7 @@ module.exports = {
         {
           title: "Favorite APP",
           collapsable: true,
-          path: "FavoriteApp/current",
+          path: "favorite-app/current",
           // children: [["/favoriteApp/current", "front end"]],
         },
         {
@@ -31,12 +31,12 @@ module.exports = {
           collapsable: true,
           children: [
             {
-              title: "vscode_plugins",
-              path: "VSCode/vscode_plugins",
+              title: "vscode-plugins",
+              path: "vscode/vscode-plugins",
             },
             {
-              title: "enable_preview",
-              path: "VSCode/enable_preview",
+              title: "enable-preview",
+              path: "vscode/enable-preview",
             },
           ],
         },
@@ -44,9 +44,9 @@ module.exports = {
           title: "Ubuntu 相关",
           collapsable: true,
           children: [
-            ["Ubuntu/ctrl_alt_arrow_conflict", "ctrl_alt_arrow_conflict"],
-            ["Ubuntu/space_small", "space_small"],
-            ["Ubuntu/theme", "theme"],
+            ["ubuntu/ctrl-alt-arrow-conflict", "ctrl-alt-arrow-conflict"],
+            ["ubuntu/space-small", "space-small"],
+            ["ubuntu/theme", "theme"],
           ],
         },
         {
@@ -54,8 +54,8 @@ module.exports = {
           collapsable: true,
           children: [
             [
-              "FrontEnd/useful_websites",
-              "useful_websites_every_front-end_developer_hould_know_about",
+              "front-end/useful-websites",
+              "useful-websites-every-front-end-developer-hould-know-about",
             ],
           ],
         },
@@ -64,10 +64,10 @@ module.exports = {
           collapsable: true,
           children: [
             [
-              "Other/unicode编码后的汉字JS转换方法.md",
+              "other/unicode编码后的汉字JS转换方法.md",
               "&#x(unicode编码后的汉字)JS转换方法",
             ],
-            ["Other/stash.md", "stash"],
+            ["other/stash.md", "stash"],
           ],
         },
       ],
