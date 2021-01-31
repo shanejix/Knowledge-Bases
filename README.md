@@ -1,6 +1,5 @@
-shanejix's wiki
+# shanejix's wiki
 
-简介
 
 通过个人 wiki 来更好的组织和整理一些自己平时用到的资料和学到的知识。
 
