@@ -1,5 +1,0 @@
-# guide
-
----
-
-this is guide
