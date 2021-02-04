@@ -233,6 +233,8 @@ Error message and password prompt
 
 <li>优质中文博客</li>
 
+<li>Building a custom React media query hook for more responsive apps</li>
+
 <li>favorite application</li>
 
 <li>front-end site faverite</li>
@@ -13894,8 +13896,8 @@ Error message and password prompt
 <div created="20210201124113199" modified="20210201124116621" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Themes</pre>
 </div>
-<div created="20210201093319538" modified="20210203085655029" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Settings</pre>
+<div created="20210201093319538" modified="20210204110400878" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20210201093727705" modified="20210203034453761" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -13909,7 +13911,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="joshwcomeau Knowledge-Bases" title="$:/StoryList">
+<div created="20210204110358192" list="[[Building a custom React media query hook for more responsive apps]] Knowledge-Bases" modified="20210204110358192" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -13928,7 +13930,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210204050551805&quot;
+            &quot;text&quot;: &quot;20210204110354879&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14138,6 +14140,54 @@ https://www.bmpi.dev/
 
 https://geekplux.com/
 </pre>
+</div>
+<div created="20210204110410058" modified="20210204110444951" tags="CodeSnippets React-Hooks" title="Building a custom React media query hook for more responsive apps" type="text/x-markdown">
+<pre>Building a custom React media query hook for more responsive apps 
+
+```jsx
+import { useState, useEffect } from 'react';
+
+export function useMediaQuery(query) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() =&gt; {
+    const media = window.matchMedia(query);
+
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+
+    const listener = () =&gt; {
+      setMatches(media.matches);
+    };
+
+    media.addListener(listener);
+
+    return () =&gt; media.removeListener(listener);
+
+  }, [matches, query]);
+
+  return matches;
+}
+
+
+```
+
+example:
+
+```jsx
+function Page() {
+  let isPageWide = useMediaQuery('(min-width: 800px)')
+	
+	return &lt;&gt;
+    {isPageWide &amp;&amp; &lt;UnnecessarySidebar /&gt;}
+    &lt;ImportantContent /&gt;
+  &lt;/&gt;
+}
+
+```
+
+[https://www.netlify.com/blog/2020/12/05/building-a-custom-react-media-query-hook-for-more-responsive-apps/](https://www.netlify.com/blog/2020/12/05/building-a-custom-react-media-query-hook-for-more-responsive-apps/)</pre>
 </div>
 <div created="20210201114804363" modified="20210202095534888" tags="Application" title="favorite application" type="text/x-markdown">
 <pre>## 常用软件
