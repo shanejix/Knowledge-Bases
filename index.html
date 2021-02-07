@@ -231,6 +231,8 @@ Error message and password prompt
 
 <li>算法与数据结构</li>
 
+<li>现代模式，&quot;use strict&quot;</li>
+
 <li>优质中文博客</li>
 
 <li>Building a custom React media query hook for more responsive apps</li>
@@ -13915,13 +13917,13 @@ Error message and password prompt
 <div created="20210201115526870" modified="20210203085734577" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20210201115023487" modified="20210207063832669" title="$:/state/tab/sidebar--595412856">
+<div created="20210201115023487" modified="20210207072848120" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[ECMA-262 规范]] Knowledge-Bases" title="$:/StoryList">
+<div created="20210207091504272" list="[[现代模式，&quot;use strict&quot;]] Knowledge-Bases" modified="20210207091504272" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -13940,7 +13942,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210207064659103&quot;
+            &quot;text&quot;: &quot;20210207072814935&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14141,6 +14143,22 @@ https://visualgo.net/en
 
 https://github.com/CoderMJLee/BinaryTrees</pre>
 </div>
+<div created="20210207090950540" modified="20210207091554770" tags="javascript.info JavaScript" title="现代模式，&quot;use strict&quot;" type="text/x-markdown">
+<pre>长久以来，JavaScript 不断向前发展且并未带来任何兼容性问题。新的特性被加入，旧的功能也没有改变。这么做有利于兼容旧代码，但缺点是 JavaScript 创造者的任何错误或不完善的决定也将永远被保留在 JavaScript 语言中。
+
+这种情况一直持续到 2009 年 ECMAScript 5 (ES5) 的出现。ES5 规范增加了新的语言特性并且修改了一些已经存在的特性。为了保证旧的功能能够使用，大部分的修改是默认不生效的。你需要一个特殊的指令 —— &quot;use strict&quot; 来明确地激活这些特性。
+
+
+- 脚本文件的顶部
+- 函数体的开头
+- “classes” 和 “modules”自动启用`'use strict'`
+
+---
+
+- 没有办法取消 `'use strict'`
+
+- console控制台`'use strict'; &lt;Shift+Enter 换行&gt;`</pre>
+</div>
 <div created="20210202030500406" modified="20210202095136028" tags="Blog" title="优质中文博客" type="text/x-markdown">
 <pre>https://github.com/AlanWei/blog
 
@@ -14212,8 +14230,7 @@ const parsedInts = ['-10', '0', '10', '20', '30'].map(parseInt);
 </pre>
 </div>
 <div created="20210207064705507" modified="20210207065032570" tags="javascript.info JavaScript" title="ECMA-262 规范" type="text/x-markdown">
-<pre>
-最权威的信息来源(语言细节)，每年都会发布一个新版本的规范。
+<pre>最权威的信息来源(语言细节)，每年都会发布一个新版本的规范。
 
 - 最新的规范草案请见 [https://tc39.es/ecma262/](https://tc39.es/ecma262/)
 
