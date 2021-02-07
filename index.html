@@ -231,6 +231,8 @@ Error message and password prompt
 
 <li>大写形式的常数</li>
 
+<li>赋值 `=` 返回一个值</li>
+
 <li>前端进阶之路</li>
 
 <li>数据类型</li>
@@ -240,6 +242,8 @@ Error message and password prompt
 <li>现代模式，&quot;use strict&quot;</li>
 
 <li>优质中文博客</li>
+
+<li>自增/自减</li>
 
 <li>Building a custom React media query hook for more responsive apps</li>
 
@@ -14189,6 +14193,25 @@ const pageLoadTime = /* 网页加载所需的时间 */;
 
 换句话说，**大写命名的常量仅用作“硬编码（hard-coded）”值的别名**。**当值在执行之前或在被写入代码的时候，我们就知道值是什么了**。</pre>
 </div>
+<div created="20210207101829653" modified="20210207102024265" tags="JavaScript javascript.info" title="赋值 `=` 返回一个值" type="text/x-markdown">
+<pre>在 JavaScript 中，大多数运算符都会返回一个值。这对于 + 和 - 来说是显而易见的，但对于 = 来说也是如此。
+
+**语句 x = value 将值 value 写入 x 然后返回 x。**
+
+```js
+let a = 1;
+let b = 2;
+
+let c = 3 - (a = b + 1);
+
+alert( a ); // 3
+alert( c ); // 0
+```
+上面这个例子，(a = b + 1) 的结果是赋给 a 的值（也就是 3）。然后该值被用于进一步的运算。
+
+有时我们会在 JavaScript 库中看到它。不过，请不要写这样的代码。这样的技巧绝对不会使代码变得更清晰或可读。
+</pre>
+</div>
 <div created="20210202025511185" modified="20210202095356143" tags="Front-End" title="前端进阶之路" type="text/x-markdown">
 <pre>[前端p6什么水平？如何衡量？](https://www.zhihu.com/question/61281984/answer/1306626251)
 
@@ -14260,6 +14283,11 @@ https://www.bmpi.dev/
 
 https://geekplux.com/
 </pre>
+</div>
+<div created="20210207101342161" modified="20210207101646048" tags="JavaScript javascript.info" title="自增/自减" type="text/x-markdown">
+<pre>**所有的运算符都有返回值**，自增/自减也不例外
+- 前置形式返回一个新的值
+- 后置返回原来的值（做加法/减法之前的值）</pre>
 </div>
 <div created="20210204110410058" modified="20210204110444951" tags="CodeSnippets React-Hooks" title="Building a custom React media query hook for more responsive apps" type="text/x-markdown">
 <pre>Building a custom React media query hook for more responsive apps 
