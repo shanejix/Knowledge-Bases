@@ -227,7 +227,11 @@ Error message and password prompt
 
 <li>50-developer-tools-to-make-your-life-a-little-easier-4oc5</li>
 
+<li>大写形式的常数</li>
+
 <li>前端进阶之路</li>
+
+<li>数据类型</li>
 
 <li>算法与数据结构</li>
 
@@ -13917,13 +13921,13 @@ Error message and password prompt
 <div created="20210201115526870" modified="20210203085734577" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20210201115023487" modified="20210207072848120" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210201115023487" modified="20210207092804218" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210207091504272" list="[[现代模式，&quot;use strict&quot;]] Knowledge-Bases" modified="20210207091504272" title="$:/StoryList">
+<div list="Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14118,6 +14122,40 @@ Error message and password prompt
 <div created="20210202030531634" modified="20210202095154381" tags="Tools" title="50-developer-tools-to-make-your-life-a-little-easier-4oc5" type="text/x-markdown">
 <pre>https://dev.to/iainfreestone/50-developer-tools-to-make-your-life-a-little-easier-4oc5</pre>
 </div>
+<div created="20210207091935943" modified="20210207092934286" tags="JavaScript javascript.info" title="大写形式的常数" type="text/x-markdown">
+<pre>一个普遍的做法是将常量用作别名，以便记住那些在执行之前就已知的难以记住的值。
+
+**使用大写字母和下划线来命名这些常量**。
+
+例如，让我们以所谓的“web”（十六进制）格式为颜色声明常量：
+```js
+const COLOR_RED = &quot;#F00&quot;;
+const COLOR_GREEN = &quot;#0F0&quot;;
+const COLOR_BLUE = &quot;#00F&quot;;
+const COLOR_ORANGE = &quot;#FF7F00&quot;;
+
+// ……当我们需要选择一个颜色
+let color = COLOR_ORANGE;
+alert(color); // #FF7F00
+```
+好处：
+
+-  `COLOR_ORANGE` 比 `&quot;#FF7F00&quot;` 更容易记忆。
+- 比起 `COLOR_ORANGE` 而言，`&quot;#FF7F00&quot;` 更容易输错。
+- 阅读代码时，`COLOR_ORANGE` 比 `#FF7F00` 更易懂。
+---
+什么时候该为常量使用大写命名，什么时候进行常规命名？让我们弄清楚一点。
+
+作为一个“常数”，意味着值永远不变。**但是有些常量在执行之前就已知了（比如红色的十六进制值），还有些在执行期间被“计算”出来，但初始赋值之后就不会改变**。
+
+例如：
+```js
+const pageLoadTime = /* 网页加载所需的时间 */;
+```
+**`pageLoadTime` 的值在页面加载之前是未知的，所以采用常规命名。但是它仍然是个常量，因为赋值之后不会改变。**
+
+换句话说，**大写命名的常量仅用作“硬编码（hard-coded）”值的别名**。**当值在执行之前或在被写入代码的时候，我们就知道值是什么了**。</pre>
+</div>
 <div created="20210202025511185" modified="20210202095356143" tags="Front-End" title="前端进阶之路" type="text/x-markdown">
 <pre>[前端p6什么水平？如何衡量？](https://www.zhihu.com/question/61281984/answer/1306626251)
 
@@ -14135,6 +14173,9 @@ Error message and password prompt
 
 
 </pre>
+</div>
+<div created="20210207093132514" modified="20210207093153827" tags="JavaScript javascript.info" title="数据类型" type="text/x-markdown">
+<pre>在 JavaScript 中有 8 种基本的数据类型（译注：7 种原始类型和 1 种引用类型）</pre>
 </div>
 <div created="20210202030629251" modified="20210202095248411" tags="Algorithms Data-Structure JavaScript" title="算法与数据结构" type="text/x-markdown">
 <pre>https://github.com/trekhleb/javascript-algorithms
