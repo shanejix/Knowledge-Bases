@@ -235,6 +235,8 @@ Error message and password prompt
 
 <li>赋值 `=` 返回一个值</li>
 
+<li>函数 return 返回值</li>
+
 <li>空值合并运算符（nullish coalescing operator） ??</li>
 
 <li>逻辑 非 运算符</li>
@@ -13951,7 +13953,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[switch 类型很关键]] Knowledge-Bases" title="$:/StoryList">
+<div list="[[函数 return 返回值]] [[switch 类型很关键]] Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14231,6 +14233,25 @@ alert( c ); // 0
 上面这个例子，(a = b + 1) 的结果是赋给 a 的值（也就是 3）。然后该值被用于进一步的运算。
 
 有时我们会在 JavaScript 库中看到它。不过，请不要写这样的代码。这样的技巧绝对不会使代码变得更清晰或可读。
+</pre>
+</div>
+<div created="20210209084505273" modified="20210209084702032" tags="JavaScript javascript.info" title="函数 return 返回值" type="text/x-markdown">
+<pre>
+1.**空值的 return 或没有 return 的函数返回值为 undefined**
+
+2.**不要在 return 与返回值之间添加新行**
+
+对于 return 的长表达式，可能你会很想将其放在单独一行，如下所示：
+```js
+return
+ (some + long + expression + or + whatever * f(a) + f(b))
+```
+但这不行，因为 JavaScript 默认会在 return 之后加上分号。上面这段代码和下面这段代码运行流程相同：
+```js
+return;
+ (some + long + expression + or + whatever * f(a) + f(b))
+```
+因此，实际上它的返回值变成了空值。
 </pre>
 </div>
 <div created="20210209065006167" modified="20210209070903168" tags="JavaScript javascript.info" title="空值合并运算符（nullish coalescing operator） ??" type="text/x-markdown">
