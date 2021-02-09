@@ -237,6 +237,8 @@ Error message and password prompt
 
 <li>函数 return 返回值</li>
 
+<li>函数表达式末尾会有个分号？</li>
+
 <li>空值合并运算符（nullish coalescing operator） ??</li>
 
 <li>逻辑 非 运算符</li>
@@ -13947,13 +13949,13 @@ Error message and password prompt
 <div created="20210201115526870" modified="20210203085734577" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20210201115023487" modified="20210209082502389" title="$:/state/tab/sidebar--595412856">
+<div created="20210201115023487" modified="20210209092157146" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[函数 return 返回值]] [[switch 类型很关键]] Knowledge-Bases" title="$:/StoryList">
+<div list="Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14252,6 +14254,23 @@ return;
  (some + long + expression + or + whatever * f(a) + f(b))
 ```
 因此，实际上它的返回值变成了空值。
+</pre>
+</div>
+<div created="20210209090844152" modified="20210209091032579" tags="JavaScript javascript.info" title="函数表达式末尾会有个分号？" type="text/x-markdown">
+<pre>为什么函数表达式结尾有一个分号 ;，而函数声明没有：
+```js
+function sayHi() {
+  // ...
+}
+
+let sayHi = function() {
+  // ...
+};
+```
+答案很简单：
+
+- 在代码块的结尾不需要加分号 ;，像` if { ... }，for { }，function f { } `等语法结构后面都不用加。
+- 函数表达式是在语句内部的：`let sayHi = ...;`，作为一个值。它不是代码块而是一个赋值语句。不管值是什么，都建议在语句末尾添加分号 ;。所以这里的分号与函数表达式本身没有任何关系，它只是用于终止语句。
 </pre>
 </div>
 <div created="20210209065006167" modified="20210209070903168" tags="JavaScript javascript.info" title="空值合并运算符（nullish coalescing operator） ??" type="text/x-markdown">
