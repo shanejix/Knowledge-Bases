@@ -285,6 +285,8 @@ Error message and password prompt
 
 <li>stateofjs.com</li>
 
+<li>switch 类型很关键</li>
+
 <li>Tao of React - Software Design, Architecture &amp; Best Practices</li>
 
 <li>The Catch with React Hooks</li>
@@ -13943,13 +13945,13 @@ Error message and password prompt
 <div created="20210201115526870" modified="20210203085734577" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20210201115023487" modified="20210209062653762" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210201115023487" modified="20210209082502389" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210209065040864" list="非空断言（non-null-assertion-operator）！ [[空值合并运算符（nullish coalescing operator） ??]] Knowledge-Bases" modified="20210209065040864" title="$:/StoryList">
+<div list="[[switch 类型很关键]] Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14620,6 +14622,30 @@ Generating public/private rsa key pair.
 </div>
 <div created="20210202030817239" modified="20210202095327573" tags="JS Site" title="stateofjs.com" type="text/x-markdown">
 <pre>https://2020.stateofjs.com/</pre>
+</div>
+<div created="20210209082359913" modified="20210209082454069" tags="javascript.info JavaScript" title="switch 类型很关键" type="text/x-markdown">
+<pre>强调一下，这里的相等是严格相等。被比较的值必须是相同的类型才能进行匹配。
+
+```js
+let arg = prompt(&quot;Enter a value?&quot;)
+switch (arg) {
+  case '0':
+  case '1':
+    alert( 'One or zero' );
+    break;
+
+  case '2':
+    alert( 'Two' );
+    break;
+
+  case 3:
+    alert( 'Never executes!' );
+    break;
+  default:
+    alert( 'An unknown value' )
+}
+```
+输入 3，因为 prompt 的结果是字符串类型的 &quot;3&quot;，不严格相等 === 于数字类型的 3，所以 case 3 不会执行！因此 case 3 部分是一段无效代码。所以会执行 default 分支。</pre>
 </div>
 <div created="20210203085508722" modified="20210203085604222" tags="React" title="Tao of React - Software Design, Architecture &amp; Best Practices" type="text/x-markdown">
 <pre>[https://alexkondov.com/tao-of-react/](https://alexkondov.com/tao-of-react/)</pre>
