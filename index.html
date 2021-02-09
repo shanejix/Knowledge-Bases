@@ -233,6 +233,12 @@ Error message and password prompt
 
 <li>赋值 `=` 返回一个值</li>
 
+<li>逻辑 非 运算符</li>
+
+<li>逻辑 或 运算符</li>
+
+<li>逻辑 与 运算符</li>
+
 <li>前端进阶之路</li>
 
 <li>数据类型</li>
@@ -242,6 +248,10 @@ Error message and password prompt
 <li>现代模式，&quot;use strict&quot;</li>
 
 <li>优质中文博客</li>
+
+<li>在比较字符串的大小时，JavaScript 会使用“字典（dictionary）”或“词典（lexicographical）”顺序进行判定</li>
+
+<li>值的比较</li>
 
 <li>自增/自减</li>
 
@@ -13931,13 +13941,13 @@ Error message and password prompt
 <div created="20210201115526870" modified="20210203085734577" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Explorer</pre>
 </div>
-<div created="20210201115023487" modified="20210207100505817" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210201115023487" modified="20210209062653762" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="non-null-assertion-operator Knowledge-Bases" title="$:/StoryList">
+<div list="[[逻辑 非 运算符]] Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -13956,7 +13966,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210209025717815&quot;
+            &quot;text&quot;: &quot;20210209053744650&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14214,6 +14224,69 @@ alert( c ); // 0
 有时我们会在 JavaScript 库中看到它。不过，请不要写这样的代码。这样的技巧绝对不会使代码变得更清晰或可读。
 </pre>
 </div>
+<div created="20210209063739330" modified="20210209063900143" tags="JavaScript javascript.info" title="逻辑 非 运算符" type="text/x-markdown">
+<pre>逻辑非运算符接受一个参数，并按如下运作：
+
+- 将操作数转化为布尔类型：true/false。
+- **返回相反的值。**
+
+
+**两个非运算 !! 有时候用来将某个值转化为布尔类型**</pre>
+</div>
+<div created="20210209060624703" modified="20210209062842795" tags="JavaScript javascript.info" title="逻辑 或 运算符" type="text/x-markdown">
+<pre>
+**一个或运算 || 的链，将返回第一个真值，如果不存在真值，就返回该链的最后一个值。**返回的值是操作数的初始形式，不会做布尔转换。与“纯粹的、传统的、仅仅处理布尔值的或运算”相比，这个规则就引起了一些很有趣的用法：
+
+1. **获取变量列表或者表达式中的第一个真值**
+
+    ```js
+        // 例如，我们有变量 firstName、lastName 和 nickName，都是可选的（即可以是 undefined，也可以是假值）。
+
+        // 我们用或运算 || 来选择有数据的那一个，并显示出来（如果没有设置，则用 &quot;Anonymous&quot;）：
+
+        let firstName = &quot;&quot;;
+        let lastName = &quot;&quot;;
+        let nickName = &quot;SuperCoder&quot;;
+
+        alert( firstName || lastName || nickName || &quot;Anonymous&quot;); // SuperCoder
+
+        // 如果所有变量的值都为假，结果就是 &quot;Anonymous&quot;。
+    ```
+2. **短路求值（Short-circuit evaluation）**
+   ```js
+        // 或运算符 || 的另一个用途是所谓的“短路求值”。
+
+        // 这指的是，|| 对其参数进行处理，直到达到第一个真值，然后立即返回该值，而无需处理其他参数。
+
+        //如果操作数不仅仅是一个值，而是一个有副作用的表达式，例如变量赋值或函数调用，那么这一特性的重要性就变得显而易见了。
+
+        //在下面这个例子中，只会打印第二条信息：
+
+        true || alert(&quot;not printed&quot;);
+        false || alert(&quot;printed&quot;);
+
+        // 在第一行中，或运算符 || 在遇到 true 时立即停止运算，所以 alert 没有运行。
+
+        // 有时，人们利用这个特性，只在左侧的条件为假时才执行命令。
+   ```</pre>
+</div>
+<div created="20210209062700965" modified="20210209063451333" tags="JavaScript javascript.info" title="逻辑 与 运算符" type="text/x-markdown">
+<pre>**与运算返回第一个假值，如果没有假值就返回最后一个值**，返回的值是操作数的初始形式，不会做布尔转换。
+
+1. **获取变量列表或者表达式中的第一个假值。**
+
+```js
+    alert( 1 &amp;&amp; 2 &amp;&amp; null &amp;&amp; 3 ); // null
+```
+
+2. **短路求值（Short-circuit evaluation）:如果所有的值都是真值，最后一个值将会被返回**
+
+```js
+    alert( 1 &amp;&amp; 2 &amp;&amp; 3 ); // 3，最后一个值
+```
+
+与运算 &amp;&amp; 的优先级比或运算 || 要高</pre>
+</div>
 <div created="20210202025511185" modified="20210202095356143" tags="Front-End" title="前端进阶之路" type="text/x-markdown">
 <pre>[前端p6什么水平？如何衡量？](https://www.zhihu.com/question/61281984/answer/1306626251)
 
@@ -14284,6 +14357,40 @@ https://github.com/LuckyWinty/blog
 https://www.bmpi.dev/
 
 https://geekplux.com/
+</pre>
+</div>
+<div created="20210209053750050" modified="20210209054405121" tags="javascript.info JavaScript" title="在比较字符串的大小时，JavaScript 会使用“字典（dictionary）”或“词典（lexicographical）”顺序进行判定" type="text/x-markdown">
+<pre>换言之，字符串是按字符（母）逐个进行比较的。
+
+例如：
+```js
+alert( 'Z' &gt; 'A' ); // true
+alert( 'Glow' &gt; 'Glee' ); // true
+alert( 'Bee' &gt; 'Be' ); // true
+```
+
+字符串的比较算法非常简单：
+- 首先比较两个字符串的首位字符大小
+- 如果一方字符较大（或较小），则该字符串大于（或小于）另一个字符串。算法结束。
+- 否则，如果两个字符串的首位字符相等，则继续取出两个字符串各自的后一位字符进行比较
+- 重复上述步骤进行比较，直到比较完成某字符串的所有字符为止
+- 如果两个字符串的字符同时用完，那么则判定它们相等，否则未结束（还有未比较的字符）的字符串更大
+
+
+
+**非真正的字典顺序，而是 Unicode 编码顺序**
+
+这是因为在 JavaScript 使用的内部编码表中（Unicode），小写字母的字符索引值更大。
+
+
+
+</pre>
+</div>
+<div created="20210209055453604" modified="20210209055550305" tags="javascript.info JavaScript" title="值的比较" type="text/x-markdown">
+<pre>避免问题：
+
+- 除了严格相等 === 外，其他但凡是有 undefined/null 参与的比较，我们都需要格外小心。
+- 除非你非常清楚自己在做什么，否则永远不要使用 &gt;= &gt; &lt; &lt;= 去比较一个可能为 null/undefined 的变量。对于取值可能是 null/undefined 的变量，请按需要分别检查它的取值情况。
 </pre>
 </div>
 <div created="20210207101342161" modified="20210207101646048" tags="JavaScript javascript.info" title="自增/自减" type="text/x-markdown">
