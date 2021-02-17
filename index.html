@@ -227,6 +227,8 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>0001.TwoSum</li>
+
 <li>0002.AddTwoNumbers</li>
 
 <li>50-developer-tools-to-make-your-life-a-little-easier-4oc5</li>
@@ -13977,7 +13979,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="0002.AddTwoNumbers Knowledge-Bases" title="$:/StoryList">
+<div list="0001.TwoSum 0002.AddTwoNumbers Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14171,6 +14173,27 @@ Error message and password prompt
 </div>
 <div created="20210201123719969" modified="20210201123744018" title="$:/view">
 <pre>pop</pre>
+</div>
+<div created="20210217144603430" modified="20210217144723862" tags="LeetCode" title="0001.TwoSum" type="text/x-markdown">
+<pre>**两数之和向两数之差** - **转换**
+```js
+function twoSum3(nums, target) {
+  // to save nums array value-index
+  let hash = {};
+
+  if (nums) {
+    for (let i in nums) {
+      let diff = target - nums[i];
+
+      if (diff in hash) {
+        return [hash[diff], i];
+      }
+
+      hash[nums[i]] = i;
+    }
+  }
+}
+```</pre>
 </div>
 <div created="20210217144303984" modified="20210217144449476" tags="LeetCode" title="0002.AddTwoNumbers" type="text/x-markdown">
 <pre>**不等长向等长** - **转化**
