@@ -309,6 +309,8 @@ Error message and password prompt
 
 <li>函数表达式末尾会有个分号？</li>
 
+<li>删除链表中的节点</li>
+
 <li>前端进阶之路</li>
 
 <li>同事就是同事，不是朋友</li>
@@ -13979,13 +13981,13 @@ Error message and password prompt
 <div created="20210201115526870" modified="20210209143158269" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210201115023487" modified="20210218072823292" title="$:/state/tab/sidebar--595412856">
+<div created="20210201115023487" modified="20210218111247314" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Knowledge-Bases" title="$:/StoryList">
+<div created="20210218110541206" list="哨兵节点 删除链表中的节点 Knowledge-Bases" modified="20210218110603705" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14004,7 +14006,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210218070952193&quot;
+            &quot;text&quot;: &quot;20210218110517728&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14789,6 +14791,24 @@ let sayHi = function() {
 - 在代码块的结尾不需要加分号 ;，像` if { ... }，for { }，function f { } `等语法结构后面都不用加。
 - 函数表达式是在语句内部的：`let sayHi = ...;`，作为一个值。它不是代码块而是一个赋值语句。不管值是什么，都建议在语句末尾添加分号 ;。所以这里的分号与函数表达式本身没有任何关系，它只是用于终止语句。
 </pre>
+</div>
+<div created="20210218110522038" modified="20210218111236466" tags="Algorithms Data-Structure LeetCode LinkedList CodeSnippets" title="删除链表中的节点" type="text/x-markdown">
+<pre>方法一：知道前驱节点
+```js
+preNode.next = delNode.next;
+```
+
+方法二:不知道前驱节点
+
+```js
+// 用后继节点的值替换待删除节点的值
+delNode.val = nextNode.val;
+delNode.next = nextNode.next.next;//待删除的节点不能是尾节点
+```
+
+
+
+[https://leetcode-cn.com/problems/delete-node-in-a-linked-list/solution/shan-chu-lian-biao-zhong-de-jie-dian-by-leetcode/](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/solution/shan-chu-lian-biao-zhong-de-jie-dian-by-leetcode/)</pre>
 </div>
 <div created="20210202025511185" modified="20210202095356143" tags="Front-End" title="前端进阶之路" type="text/x-markdown">
 <pre>[前端p6什么水平？如何衡量？](https://www.zhihu.com/question/61281984/answer/1306626251)
