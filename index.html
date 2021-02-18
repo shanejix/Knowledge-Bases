@@ -233,6 +233,8 @@ Error message and password prompt
 
 <li>0160.IntersectionofTwoLinkedLists</li>
 
+<li>0160.IntersectionofTwoLinkedLists-OPT</li>
+
 <li>50-developer-tools-to-make-your-life-a-little-easier-4oc5</li>
 
 <li>Babel ：Transpiler And Polyfill</li>
@@ -13981,7 +13983,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="0160.IntersectionofTwoLinkedLists Knowledge-Bases" title="$:/StoryList">
+<div list="0160.IntersectionofTwoLinkedLists-OPT Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14000,7 +14002,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210217151336120&quot;
+            &quot;text&quot;: &quot;20210218025923105&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14263,6 +14265,29 @@ var getIntersectionNode = function (headA, headB) {
 
     return null;
 
+};
+```</pre>
+</div>
+<div created="20210218025925395" modified="20210218030331949" tags="LeetCode" title="0160.IntersectionofTwoLinkedLists-OPT" type="text/x-markdown">
+<pre>注意循环终止的条件，可以是`while(currA &amp;&amp; currB)`么,
+
+**注意`currA和currA.next`的区别**,如果使用`currA.next`拼接链表会导致死循环
+
+```js 
+var getIntersectionNodeOpitmization = function (headA, headB) {
+    if (!headA || !headB) {
+        return null;
+    }
+
+    let currA = headA;
+    let currB = headB;
+
+    while (currA !== currB) {
+        currA = currA === null ? headB : currA.next;
+        currB = currB === null ? headA : currB.next;
+    }
+
+    return currA;
 };
 ```</pre>
 </div>
