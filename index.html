@@ -243,6 +243,8 @@ Error message and password prompt
 
 <li>大写形式的常数</li>
 
+<li>反转链表</li>
+
 <li>非空断言（non-null-assertion-operator）！</li>
 
 <li>赋值 `=` 返回一个值</li>
@@ -13989,7 +13991,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="前端简历参考 Knowledge-Bases" title="$:/StoryList">
+<div list="Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14008,7 +14010,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210219020559043&quot;
+            &quot;text&quot;: &quot;20210219061312388&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14414,6 +14416,60 @@ const pageLoadTime = /* 网页加载所需的时间 */;
 **`pageLoadTime` 的值在页面加载之前是未知的，所以采用常规命名。但是它仍然是个常量，因为赋值之后不会改变。**
 
 换句话说，**大写命名的常量仅用作“硬编码（hard-coded）”值的别名**。**当值在执行之前或在被写入代码的时候，我们就知道值是什么了**。</pre>
+</div>
+<div created="20210219061319640" modified="20210219061625595" tags="LinkedList Algorithms Data-Structure CodeSnippets LeetCode" title="反转链表" type="text/x-markdown">
+<pre>方法一，头插法
+
+```js
+var reverseListOptmization = function (head) {
+
+    let newHead = new ListNode(0);
+
+    while (head) {
+        let insert = head;
+        head = head.next;
+        insert.next = newHead.next;
+        newHead.next = insert;
+    }
+
+    return newHead.next;
+};
+```
+方法二，迭代法
+
+```js
+var reverseListOptmization1 = function (head) {
+
+    let prev = null;
+
+    while (head) {
+        let curr = head;
+        head = head.next;
+        curr.next = prev;
+        prev = curr;
+    }
+
+    return prev;
+};
+```
+
+方法三，递归法
+
+```js
+var reverseList = function(head) {
+
+    if(!head || !head.next){
+        return head;
+    }
+
+    let newHead = reverseList(head.next);
+
+    head.next.next = head;
+    head.next = null;
+
+    return newHead;
+};
+```</pre>
 </div>
 <div created="20210209025721707" modified="20210209065937195" tags="TypeScript" title="非空断言（non-null-assertion-operator）！" type="text/x-markdown">
 <pre>[https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator)
