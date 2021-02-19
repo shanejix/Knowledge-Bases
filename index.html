@@ -231,6 +231,8 @@ Error message and password prompt
 
 <li>0002.AddTwoNumbers</li>
 
+<li>0023.MergekSortedLists</li>
+
 <li>0086.PartitionList-optmization</li>
 
 <li>0160.IntersectionofTwoLinkedLists</li>
@@ -13991,7 +13993,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Knowledge-Bases" title="$:/StoryList">
+<div list="0023.MergekSortedLists Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14010,7 +14012,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210219061312388&quot;
+            &quot;text&quot;: &quot;20210219082834262&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14245,6 +14247,61 @@ var addTwoNumbersOpimization = function (l1, l2) {
     }
 
     return head;
+}
+```</pre>
+</div>
+<div created="20210219082836073" modified="20210219082853704" tags="LeetCode" title="0023.MergekSortedLists" type="text/x-markdown">
+<pre>**分治合并 - 递归**
+
+注意题解中的时间和空间复杂度的优化
+
+[https://leetcode-cn.com/problems/merge-k-sorted-lists/solution/he-bing-kge-pai-xu-lian-biao-by-leetcode-solutio-2/](https://leetcode-cn.com/problems/merge-k-sorted-lists/solution/he-bing-kge-pai-xu-lian-biao-by-leetcode-solutio-2/)
+```js
+/**
+ * @param {ListNode[]} lists
+ * @return {ListNode}
+ */
+var mergeKLists = function (lists) {
+  return mergeList(lists, 0, lists.length - 1);
+};
+
+function mergeList(listNodes, begin, end) {
+  if (begin &gt; end) {
+    return null;
+  }
+
+  if (begin === end) return listNodes[begin];
+
+  let mid = (begin + end) &gt;&gt; 1;
+
+  let listNode1 = mergeList(listNodes, begin, mid);
+  let listNode2 = mergeList(listNodes, mid + 1, end);
+
+  let merges = merge(listNode1, listNode2);
+
+  return merges;
+}
+
+function merge(l1, l2) {
+  let p1 = l1;
+  let p2 = l2;
+  let result = new ListNode(null);
+  let p3 = result;
+
+  while (p1 &amp;&amp; p2) {
+    if (p1.val &gt; p2.val) {
+      p3.next = p2;
+      p2 = p2.next;
+    } else {
+      p3.next = p1;
+      p1 = p1.next;
+    }
+    p3 = p3.next;
+  }
+
+  p3.next = p1 || p2;
+
+  return result.next;
 }
 ```</pre>
 </div>
