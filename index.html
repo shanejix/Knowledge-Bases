@@ -14439,9 +14439,8 @@ var getIntersectionNodeOpitmization = function (headA, headB) {
 };
 ```</pre>
 </div>
-<div created="20210222141016545" modified="20210222144111457" tags="LeetCode" title="155. 最小栈" type="text/vnd.tiddlywiki">
-<pre>[[239. 滑动窗口最大值 &amp;&amp; 155. 最小栈]]
-
+<div created="20210222141016545" modified="20210222145054868" tags="LeetCode" title="155. 最小栈" type="text/vnd.tiddlywiki">
+<pre>
 ---
 
 方法一：双栈法（空间换时间）
@@ -14460,27 +14459,25 @@ var getIntersectionNodeOpitmization = function (headA, headB) {
 
 入栈
 
-- 栈为空时，min为当前入栈元素
+* 栈为空时，min为当前入栈元素
 
-- 栈不为空时，
+* 栈不为空时，
 
-- 入栈元素大于min，直接入栈
+* 入栈元素大于min，直接入栈
 
-- 入栈元素小于等于min，先将min入栈，然后更新min为当前入栈元素
+* 入栈元素小于等于min，先将min入栈，然后更新min为当前入栈元素
 
 出栈
 
-- 栈为空时，结束
+* 栈为空时，结束
 
-- 栈不为空时，
+* 栈不为空时，
 
-- 出栈元素大于min，直接出栈
+* 出栈元素大于min，直接出栈
 
-- 出栈元素等于min，将出栈元素的下位元素出栈并更新为min
+* 出栈元素等于min，将出栈元素的下位元素出栈并更新为min
 
 
-
----
 
 方法三，思路：
 
@@ -14488,32 +14485,34 @@ var getIntersectionNodeOpitmization = function (headA, headB) {
 
 入栈
 
-- 栈为空时，min为当前入栈元素，并入栈 （当前元素-min）的差值
+* 栈为空时，min为当前入栈元素，并入栈 （当前元素-min）的差值
 
-- 栈不为空时，
+* 栈不为空时，
 
-- 入栈元素大于等于min，直接入栈当前元素-min）的差值
+* 入栈元素大于等于min，直接入栈当前元素-min）的差值
 
-- 入栈元素小于min，直接入栈当前元素-min）的差值，然后更新min为当前入栈元素
+* 入栈元素小于min，直接入栈当前元素-min）的差值，然后更新min为当前入栈元素
 
 出栈
 
-- 栈为空时，结束
+* 栈为空时，结束
 
-- 栈不为空时，
+* 栈不为空时，
 
-- 出栈元素大于等于0，直接出栈，出栈为（出栈元素+min）
+* 出栈元素大于等于0，直接出栈，出栈为（出栈元素+min）
 
-- 出栈元素小于0，出栈为（min - 出栈元素）的值，并将min更新为（min - 出栈元素）
+* 出栈元素小于0，出栈为（min - 出栈元素）的值，并将min更新为（min - 出栈元素）
 
 
 ---
 
 总结：
 
-- 法二，法三，很类似
+* 法二，法三，很类似
 
-- 法一，法四，很类似
+* 法一，法四，很类似
+
+[[239. 滑动窗口最大值 &amp;&amp; 155. 最小栈]]
 
 https://leetcode-cn.com/problems/min-stack/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-38/</pre>
 </div>
