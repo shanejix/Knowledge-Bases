@@ -243,6 +243,8 @@ Error message and password prompt
 
 <li>0160.IntersectionofTwoLinkedLists-opimization</li>
 
+<li>155. 最小栈</li>
+
 <li>239. 滑动窗口最大值 &amp;&amp; 155. 最小栈</li>
 
 <li>239. 滑动窗口最大值⭐⭐⭐</li>
@@ -14013,13 +14015,13 @@ Error message and password prompt
 <div created="20210201115526870" modified="20210209143158269" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Tags</pre>
 </div>
-<div created="20210201115023487" modified="20210222120905531" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210201115023487" modified="20210222141009730" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210222120731791" list="[[239. 滑动窗口最大值⭐⭐⭐]] [[239. 滑动窗口最大值 &amp;&amp; 155. 最小栈]] Knowledge-Bases" modified="20210222120811367" title="$:/StoryList">
+<div created="20210222141010567" list="[[239. 滑动窗口最大值 &amp;&amp; 155. 最小栈]] [[155. 最小栈]] [[239. 滑动窗口最大值⭐⭐⭐]] Knowledge-Bases" modified="20210222143833542" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14038,7 +14040,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210222115146768&quot;
+            &quot;text&quot;: &quot;20210222141006402&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14436,6 +14438,84 @@ var getIntersectionNodeOpitmization = function (headA, headB) {
     return currA;
 };
 ```</pre>
+</div>
+<div created="20210222141016545" modified="20210222144111457" tags="LeetCode" title="155. 最小栈" type="text/vnd.tiddlywiki">
+<pre>[[239. 滑动窗口最大值 &amp;&amp; 155. 最小栈]]
+
+---
+
+方法一：双栈法（空间换时间）
+
+方法二：单栈-最小值法
+
+方法三：单栈-差值法
+
+方法四：单栈-同步最大值法
+
+---
+
+方法二，思路：
+
+使用min保存最小值
+
+入栈
+
+- 栈为空时，min为当前入栈元素
+
+- 栈不为空时，
+
+- 入栈元素大于min，直接入栈
+
+- 入栈元素小于等于min，先将min入栈，然后更新min为当前入栈元素
+
+出栈
+
+- 栈为空时，结束
+
+- 栈不为空时，
+
+- 出栈元素大于min，直接出栈
+
+- 出栈元素等于min，将出栈元素的下位元素出栈并更新为min
+
+
+
+---
+
+方法三，思路：
+
+使用min保存最小值
+
+入栈
+
+- 栈为空时，min为当前入栈元素，并入栈 （当前元素-min）的差值
+
+- 栈不为空时，
+
+- 入栈元素大于等于min，直接入栈当前元素-min）的差值
+
+- 入栈元素小于min，直接入栈当前元素-min）的差值，然后更新min为当前入栈元素
+
+出栈
+
+- 栈为空时，结束
+
+- 栈不为空时，
+
+- 出栈元素大于等于0，直接出栈，出栈为（出栈元素+min）
+
+- 出栈元素小于0，出栈为（min - 出栈元素）的值，并将min更新为（min - 出栈元素）
+
+
+---
+
+总结：
+
+- 法二，法三，很类似
+
+- 法一，法四，很类似
+
+https://leetcode-cn.com/problems/min-stack/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-38/</pre>
 </div>
 <div created="20210221154108774" modified="20210221154556527" tags="LeetCode" title="239. 滑动窗口最大值 &amp;&amp; 155. 最小栈" type="text/x-markdown">
 <pre>*155. 最小栈* 中 **双栈法** 和 *239. 滑动窗口最大值* 中 **单调队列法** 有异曲同工之妙 - **空间换时间**</pre>
