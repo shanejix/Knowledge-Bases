@@ -185,6 +185,10 @@ Error message and password prompt
 
 <li>$:/plugins/flibbles/relink</li>
 
+<li>$:/plugins/flibbles/relink-markdown</li>
+
+<li>$:/plugins/flibbles/relink-titles</li>
+
 <li>$:/plugins/tiddlywiki/highlight</li>
 
 <li>$:/plugins/tiddlywiki/markdown</li>
@@ -263,6 +267,58 @@ Error message and password prompt
 
 <li>50-developer-tools-to-make-your-life-a-little-easier-4oc5</li>
 
+<li>常用的类型转换:转换为 string 类型、转换为 number 类型和转换为 boolean 类型</li>
+
+<li>大写形式的常数</li>
+
+<li>反转链表</li>
+
+<li>非空断言（non-null-assertion-operator）！</li>
+
+<li>赋值 `=` 返回一个值</li>
+
+<li>函数 return 返回值</li>
+
+<li>函数表达式末尾会有个分号？</li>
+
+<li>空值合并运算符（nullish coalescing operator） ??</li>
+
+<li>利用‘栈’求左/右边第一个比当前值大的办法</li>
+
+<li>链表的后半部分(中间节点)</li>
+
+<li>逻辑 非 运算符</li>
+
+<li>逻辑 或 运算符</li>
+
+<li>逻辑 与 运算符</li>
+
+<li>前端简历参考</li>
+
+<li>前端进阶之路</li>
+
+<li>删除链表中的节点</li>
+
+<li>哨兵节点</li>
+
+<li>数据类型</li>
+
+<li>算法与数据结构</li>
+
+<li>同时从头/从尾遍历数组</li>
+
+<li>同事就是同事，不是朋友</li>
+
+<li>现代模式，&quot;use strict&quot;</li>
+
+<li>优质中文博客</li>
+
+<li>在比较字符串的大小时，JavaScript 会使用“字典（dictionary）”或“词典（lexicographical）”顺序进行判定</li>
+
+<li>值的比较</li>
+
+<li>自增/自减</li>
+
 <li>awesome-react</li>
 
 <li>Babel ：Transpiler And Polyfill</li>
@@ -332,58 +388,6 @@ Error message and password prompt
 <li>VSCode取消文件预览模式</li>
 
 <li>You-Dont-Know-JS</li>
-
-<li>优质中文博客</li>
-
-<li>值的比较</li>
-
-<li>函数 return 返回值</li>
-
-<li>函数表达式末尾会有个分号？</li>
-
-<li>删除链表中的节点</li>
-
-<li>利用‘栈’求左/右边第一个比当前值大的办法</li>
-
-<li>前端简历参考</li>
-
-<li>前端进阶之路</li>
-
-<li>反转链表</li>
-
-<li>同事就是同事，不是朋友</li>
-
-<li>同时从头/从尾遍历数组</li>
-
-<li>哨兵节点</li>
-
-<li>在比较字符串的大小时，JavaScript 会使用“字典（dictionary）”或“词典（lexicographical）”顺序进行判定</li>
-
-<li>大写形式的常数</li>
-
-<li>常用的类型转换:转换为 string 类型、转换为 number 类型和转换为 boolean 类型</li>
-
-<li>数据类型</li>
-
-<li>现代模式，&quot;use strict&quot;</li>
-
-<li>空值合并运算符（nullish coalescing operator） ??</li>
-
-<li>算法与数据结构</li>
-
-<li>自增/自减</li>
-
-<li>赋值 `=` 返回一个值</li>
-
-<li>逻辑 与 运算符</li>
-
-<li>逻辑 或 运算符</li>
-
-<li>逻辑 非 运算符</li>
-
-<li>链表的后半部分(中间节点)</li>
-
-<li>非空断言（non-null-assertion-operator）！</li>
 
 </ul>
 </p>
@@ -9971,8 +9975,9 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Untitled]]
-# [[$:/plugins/flibbles/relink]]</pre>
+# [[$:/plugins/flibbles/relink-titles]]
+# [[$:/plugins/flibbles/relink-markdown]]
+# [[$:/plugins/tiddlywiki/markdown]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -14532,6 +14537,129 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div author="Flibbles" core-version="&gt;=5.1.14" dependents="" description="Markdown support for Relink" list="readme" name="Relink Markdown" parent-plugin="$:/plugins/flibbles/relink" plugin-type="plugin" source="https://github.com/flibbles/tw5-relink" title="$:/plugins/flibbles/relink-markdown" type="application/json" version="1.10.0">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/flibbles/relink/js/fieldtypes/markdown.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/fieldtypes/markdown.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkfieldtype\ntitle: $:/plugins/flibbles/relink/js/fieldtypes/markdown.js\ntype: application/javascript\n\nThis relinks tiddlers which contain markdown. It tries to be agnostic to\nwhichever markdown plugin you're using.\n\n\\*/\n\nvar EntryNode = require('$:/plugins/flibbles/relink/js/utils/entry');\nvar Rebuilder = require(\&quot;$:/plugins/flibbles/relink/js/utils/rebuilder.js\&quot;);\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown.js\&quot;);\nvar WikiParser = require(\&quot;$:/core/modules/parsers/wikiparser/wikiparser.js\&quot;)['text/vnd.tiddlywiki'];\n\nvar MarkdownEntry = EntryNode.newType(\&quot;markdown\&quot;);\n\nfunction MarkdownRelinker(text, fromTitle, toTitle, options) {\n\tthis.wiki = options.wiki;\n\tthis.entry = new MarkdownEntry();\n\tthis.builder = new Rebuilder(text);\n\tthis.fromTitle = fromTitle;\n\tthis.toTitle = toTitle;\n\tthis.options = options;\n\tif(!this.mdInlineRuleClasses) {\n\t\tMarkdownRelinker.prototype.mdInlineRuleClasses = $tw.modules.createClassesFromModules(\&quot;relinkmarkdownrule\&quot;,\&quot;inline\&quot;,$tw.MarkdownRuleBase);\n\t}\n\tif(!this.mdBlockRuleClasses) {\n\t\tMarkdownRelinker.prototype.mdBlockRuleClasses = $tw.modules.createClassesFromModules(\&quot;relinkmarkdownrule\&quot;,\&quot;block\&quot;,$tw.MarkdownRuleBase);\n\t}\n\tthis.source = text || \&quot;\&quot;;\n\tthis.sourceLength = this.source.length;\n\t// Set current parse position\n\tthis.pos = 0;\n\t// Instantiate the parser block and inline rules\n\tthis.blockRules = this.instantiateRules(this.mdBlockRuleClasses,\&quot;block\&quot;,0);\n\tthis.inlineRules = this.instantiateRules(this.mdInlineRuleClasses,\&quot;inline\&quot;,0);\n\t// instantiateRules first with indent==undefined so we can match regardless\n\t// of tabdepth. Now we need to be strict about it.\n\tthis.indent = 0;\n\tthis.parseBlocks();\n};\n\nMarkdownRelinker.prototype = Object.create(WikiParser.prototype);\n\nmodule.exports\n\nMarkdownRelinker.prototype.parseBlock = function(terminatorRegExpString) {\n\tvar terminatorRegExp = /([^\\S\\n]*\\r?\\n)/mg;\n\tthis.skipEmptyLines();\n\tif(this.pos &gt;= this.sourceLength) {\n\t\treturn [];\n\t}\n\t// Look for a block rule that applies at the current position\n\tvar nextMatch = this.findNextMatch(this.blockRules, this.pos);\n\tif(nextMatch &amp;&amp; nextMatch.matchIndex === this.pos) {\n\t\treturn this.relinkRule(nextMatch);\n\t}\n\treturn this.parseInlineRun(terminatorRegExp);\n};\n\nMarkdownRelinker.prototype.relinkRule = function(ruleInfo) {\n\tvar newEntry = ruleInfo.rule.relink(this.source, this.fromTitle, this.toTitle, this.options);\n\tif (newEntry !== undefined) {\n\t\tthis.entry.add(newEntry);\n\t\tif (newEntry.output) {\n\t\t\tthis.builder.add(newEntry.output, ruleInfo.matchIndex, this.pos);\n\t\t}\n\t}\n};\n\nMarkdownRelinker.prototype.parseInlineRunTerminated = function(terminatorRegExp,options) {\n\toptions = options || {};\n\tvar tree = [];\n\t// Find the next occurrence of the terminator\n\tterminatorRegExp.lastIndex = this.pos;\n\tvar terminatorMatch = terminatorRegExp.exec(this.source);\n\t// Find the next occurrence of a inlinerule\n\tvar inlineRuleMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t// Loop around until we've reached the end of the text\n\twhile(this.pos &lt; this.sourceLength &amp;&amp; (terminatorMatch || inlineRuleMatch)) {\n\t\t// Return if we've found the terminator, and it precedes any inline rule match\n\t\tif(terminatorMatch) {\n\t\t\tif(!inlineRuleMatch || inlineRuleMatch.matchIndex &gt;= terminatorMatch.index) {\n\t\t\t\tthis.relinkWikitext(this.pos, terminatorMatch.index);\n\t\t\t\t//if(options.eatTerminator) {\n\t\t\t\t\tthis.pos += terminatorMatch[0].length;\n\t\t\t\t//}\n\t\t\t\treturn tree;\n\t\t\t}\n\t\t}\n\t\t// Process any inline rule, along with the text preceding it\n\t\tif(inlineRuleMatch) {\n\t\t\t// Preceding text\n\t\t\tthis.relinkWikitext(this.pos, inlineRuleMatch.matchIndex);\n\t\t\tthis.relinkRule(inlineRuleMatch);\n\t\t\t// Look for the next inline rule\n\t\t\tinlineRuleMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t\t\t// Look for the next terminator match\n\t\t\tterminatorRegExp.lastIndex = this.pos;\n\t\t\tterminatorMatch = terminatorRegExp.exec(this.source);\n\t\t}\n\t}\n\t// Process the remaining text\n\tthis.relinkWikitext(this.pos, this.sourceLength);\n\treturn tree;\n};\n\nMarkdownRelinker.prototype.skipEmptyLines = function() {\n\tvar emptyRegExp = /(?:[^\\S\\n]*\\n)+/mg;\n\temptyRegExp.lastIndex = this.pos;\n\tvar emptyMatch = emptyRegExp.exec(this.source);\n\tif(emptyMatch &amp;&amp; emptyMatch.index === this.pos) {\n\t\tthis.pos = emptyRegExp.lastIndex;\n\t}\n};\n\nMarkdownRelinker.prototype.relinkWikitext = function(startPos, end) {\n\tif (startPos &lt; end) {\n\t\tvar config = utils.getSettings(this.wiki);\n\t\tif (config.wikitext) {\n\t\t\tvar substr = this.source.substring(this.pos, end);\n\n\t\t\tvar pragma = config.wikitextPragma;\n\t\t\tvar wikitextHandler = this.options.settings.getType('wikitext');\n\t\t\tvar wikiEntry = wikitextHandler.relink(pragma + substr, this.fromTitle, this.toTitle, this.options);\n\t\t\tif (wikiEntry != undefined) {\n\t\t\t\tthis.entry.add(wikiEntry);\n\t\t\t\tif (wikiEntry.output) {\n\t\t\t\t\tthis.builder.add(wikiEntry.output.slice(pragma.length), startPos, end);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tthis.pos = end;\n}\n\nexports.name = \&quot;markdown\&quot;;\n\nexports.relink = function(markdowntext, fromTitle, toTitle, options) {\n\tvar relinker = new MarkdownRelinker(markdowntext, fromTitle, toTitle, options);\n\tvar entry = relinker.entry;\n\tif (entry.children.length &gt; 0) {\n\t\tentry.output = relinker.builder.results();\n\t\treturn entry;\n\t}\n\treturn undefined;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkfieldtype&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeblock.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeblock.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkmarkdownrule\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeblock.js\ntype: application/javascript\n\n```javascript\ncode\n```\n\n\\*/\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\n\nexports.name = \&quot;codeblock\&quot;;\nexports.types = {inline: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\tthis.matchRegExp = /(```+)[^\\n`]*(?:\\n|$)/mg;\n\tthis.maxIndent = 3;\n};\n\nexports.relink = function(text, fromTitle, toTitle, options) {\n\tvar endRegExp = new RegExp(\&quot;^ {0,3}\&quot; + this.match[1] + \&quot;+[^\\\\S\\\\n]*\\\\n\&quot;, \&quot;mg\&quot;);\n\tendRegExp.lastIndex = this.matchRegExp.lastIndex;\n\tvar endMatch = endRegExp.exec(this.parser.source);\n\tif (endMatch) {\n\t\tthis.parser.pos = endRegExp.lastIndex;\n\t} else {\n\t\tthis.parser.pos = this.parser.sourceLength;\n\t}\n\treturn undefined;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkmarkdownrule&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeinline.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeinline.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkmarkdownrule\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/codeinline.js\ntype: application/javascript\n\nHandles markdown `code` and ``code``.\n\n\\*/\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\n\nexports.name = \&quot;codeinline\&quot;;\nexports.types = {inline: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n};\n\nexports.findNextMatch = function(startPos) {\n\tvar match, matchRegExp = /`+/mg;\n\tmatchRegExp.lastIndex = startPos;\n\twhile (match = matchRegExp.exec(this.parser.source)) {\n\t\tvar next = this.parser.source.indexOf(match[0], matchRegExp.lastIndex);\n\t\t// make sure we find the corresponding ticks\n\t\tif (next &gt;= 0) {\n\t\t\t// Make sure it's the right length\n\t\t\tvar end = next + match[0].length;\n\t\t\tif (match[0].length &lt; 3 || !isLineStart(this.parser.source, next)) {\n\t\t\t\tif (this.parser.source.charAt(end) !== '`') {\n\t\t\t\t\t// make sure there aren't paragraph breaks between the points\n\t\t\t\t\tvar nextGraph = utils.indexOfParagraph(this.parser.source, matchRegExp.lastIndex);\n\t\t\t\t\tif (nextGraph &lt; 0 || nextGraph &gt; next) {\n\t\t\t\t\t\tthis.end = end;\n\t\t\t\t\t\treturn match.index;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn undefined;\n};\n\nfunction isLineStart(text, pos) {\n\t// if 3 or less spaces precede it, it's a line start.\n\tvar p = text.lastIndexOf('\\n', pos);\n\tif (pos - p &gt; 3) {\n\t\treturn false;\n\t}\n\twhile (++p &lt; pos) {\n\t\tif (text.charAt(p) !== ' ') {\n\t\t\treturn false;\n\t\t}\n\t}\n\treturn true;\n};\n\nexports.relink = function() {\n\tthis.parser.pos = this.end;\n\treturn undefined;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkmarkdownrule&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/footnote.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/footnote.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkmarkdownrule\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/footnote.js\ntype: application/javascript\n\nHandles markdown footnotes\n\n[1]: #link\n\n\\*/\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\n\nfunction FootnoteEntry() {};\nFootnoteEntry.prototype.name = \&quot;markdownfootnote\&quot;;\nFootnoteEntry.prototype.report = function() {\n\treturn [\&quot;[\&quot; + utils.abridge(this.caption) + \&quot;]:\&quot;];\n};\n\nexports.name = \&quot;markdownfootnote\&quot;;\nexports.types = {block: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n\tthis.matchRegExp = /\\[((?:[^\\\\\\]]|\\\\.)*)\\]:(\\s*)(#?)(\\S+)([^\\S\\n]*(?:\\n|$))/mg;\n\tthis.maxIndent = 3;\n};\n\nexports.relink = function(text, fromTitle, toTitle, options) {\n\tvar m = this.match,\n\t\tlink = m[4],\n\t\tentry;\n\tthis.parser.pos = m.index + m[0].length;\n\tif (m[1].charAt(0) !== \&quot;^\&quot;\n\t &amp;&amp; (m[3] === \&quot;#\&quot; || options.wiki.isImageTiddler(toTitle))\n\t &amp;&amp; decodeURIComponent(link) === fromTitle) {\n\t\tentry = new FootnoteEntry();\n\t\tentry.caption = m[1];\n\t\tentry.output = this.indentString + \&quot;[\&quot; + m[1] + \&quot;]:\&quot; + m[2] + m[3] + utils.encodeLink(toTitle) + m[5];\n\t}\n\treturn entry;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkmarkdownrule&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/link.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/link.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkmarkdownrule\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/link.js\ntype: application/javascript\n\nHandles markdown links\n\n[caption](#link)\n\n\\*/\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\nvar settings = require(\&quot;$:/plugins/flibbles/relink/js/settings\&quot;);\nvar markdown = settings.getType('markdown');\n\nfunction LinkEntry() {};\nLinkEntry.prototype.name = \&quot;markdownlink\&quot;;\nLinkEntry.prototype.report = function() {\n\tvar output = [];\n\tvar hash = '#';\n\tif (this.prefix) {\n\t\thash = '';\n\t}\n\tif (this.captionEntry) {\n\t\tvar self = this;\n\t\t$tw.utils.each(this.captionEntry.report(), function(report) {\n\t\t\toutput.push(self.prefix+\&quot;[\&quot; + (report || '') + \&quot;](\&quot; + hash + self.link + \&quot;)\&quot;);\n\t\t});\n\t};\n\tif (this.linkChanged) {\n\t\tvar safeCaption = utils.abridge(this.caption);\n\t\toutput.push(this.prefix+\&quot;[\&quot; + safeCaption + \&quot;](\&quot; + hash + \&quot;)\&quot;);\n\t}\n\treturn output;\n};\n\nLinkEntry.prototype.eachChild = function(method) {\n\tif (this.captionEntry) {\n\t\tmethod(this.captionEntry);\n\t}\n};\n\nexports.name = \&quot;markdownlink\&quot;;\nexports.types = {inline: true};\n\nexports.init = function(parser) {\n\tthis.parser = parser;\n};\n\nexports.findNextMatch = function(startPos) {\n\tthis.endMatch = this.matchLink(this.parser.source, startPos);\n\treturn this.endMatch ? this.endMatch.index : undefined;\n};\n\nexports.survey = function(text) {\n\treturn this.matchLink(text, 0);\n};\n\n/**A zero side-effect method which returns a regexp which pretended to match\n * the whole link, caption and all. I do this instead of just using a\n * regexp to begin with, because markdown links require context-free grammar\n * matching.\n * Currently, it doesn't properly set match[0]. No need as of yet.\n * 1. \&quot;!\&quot;\n * 2. caption\n * 3. \&quot;\\s*#?\&quot;\n * 4. \&quot;link\&quot;\n * 5. \&quot;\\s*'tooltip'\&quot;\n */\nexports.matchLink = function(text, pos) {\n\tpos = pos-1;\n\tvar match = undefined;\n\tdo {\n\t\tpos = text.indexOf('[', pos+1);\n\t\tif (pos &lt; 0) {\n\t\t\treturn undefined;\n\t\t}\n\t\tvar caption = this.getEnclosed(text, pos, '[', ']');\n\t\tif (caption === undefined) {\n\t\t\tcontinue;\n\t\t}\n\t\tvar linkStart = pos + caption.length+2;\n\t\tif (text.charAt(linkStart) !== '(') {\n\t\t\tcontinue;\n\t\t}\n\t\t// match[1] and match[2] are the \&quot;!\&quot; and \&quot;caption\&quot;, filled in later.\n\t\tvar regExp = /\\(()()(\\s*#?)((?:[^\\s\\(\\)]|\\([^\\s\\(\\)]*\\))+)((?:\\s+(?:'(?:[^'\\\\]|\\\\.)*'|\&quot;(?:[^\&quot;\\\\]|\\\\.)*\&quot;|\\([^)]*\\)))?\\s*)\\)/g;\n\t\tregExp.lastIndex = linkStart;\n\t\tmatch = regExp.exec(text);\n\t\tif (match &amp;&amp; match.index === linkStart &amp;&amp; utils.indexOfParagraph(match[0]) &lt; 0) {\n\t\t\tmatch[2] = caption;\n\t\t\tif (text.charAt(pos-1) === \&quot;!\&quot;) {\n\t\t\t\tmatch.index = pos-1;\n\t\t\t\tmatch[1] = \&quot;!\&quot;;\n\t\t\t} else {\n\t\t\t\tmatch.index = pos;\n\t\t\t}\n\t\t} else {\n\t\t\tmatch = undefined;\n\t\t}\n\t} while (!match);\n\treturn match;\n};\n\nexports.relink = function(text, fromTitle, toTitle, options) {\n\tvar entry = new LinkEntry(),\n\t\tem = this.endMatch,\n\t\tmodified = false,\n\t\tcaption = em[2],\n\t\timage = (em[1] === '!'),\n\t\tlink = em[4];\n\tthis.parser.pos = em.index + em[1].length + caption.length + em[0].length + 2;\n\tif (!image) {\n\t\tvar newCaption = markdown.relink(caption, fromTitle, toTitle, options);\n\t\tif (newCaption) {\n\t\t\tmodified = true;\n\t\t\tentry.captionEntry = newCaption;\n\t\t\tif (newCaption.output) {\n\t\t\t\tif (this.canBeCaption(newCaption.output)) {\n\t\t\t\t\tcaption = newCaption.output;\n\t\t\t\t} else {\n\t\t\t\t\tnewCaption.impossible = true;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\t// I don't know why internal images links don't use the '#', but links\n\t// do, but that's just how it is.\n\tif (image !== (em[3].lastIndexOf('#') &gt;=0)) {\n\t\ttry {\n\t\t\tif (decodeURIComponent(link) === fromTitle) {\n\t\t\t\tmodified = true;\n\t\t\t\tentry.linkChanged = true;\n\t\t\t\tlink = utils.encodeLink(toTitle);\n\t\t\t}\n\t\t} catch (e) {\n\t\t\t// It must be a malformed link. Not our problem.\n\t\t\t// Keep going in case the caption needs relinking.\n\t\t}\n\t}\n\tif (modified) {\n\t\tentry.link = link;\n\t\tentry.caption = caption;\n\t\tentry.prefix = em[1];\n\t\t// This way preserves whitespace\n\t\tentry.output = em[1]+\&quot;[\&quot;+caption+\&quot;](\&quot;+em[3]+link+em[5]+\&quot;)\&quot;;\n\t\treturn entry;\n\t}\n\treturn undefined;\n};\n\nexports.canBeCaption = function(caption) {\n\treturn this.indexOfClose(caption+']', -1, '[', ']') === caption.length;\n};\n\nexports.getEnclosed = function(text, pos, openChar, closeChar) {\n\tvar capEnd = this.indexOfClose(text, pos, openChar, closeChar);\n\tif (capEnd &lt; 0) {\n\t\treturn undefined;\n\t}\n\tvar enclosed = text.substring(pos+1, capEnd);\n\tif (enclosed.match(/\\n\\s*\\n/)) {\n\t\t// Paragraph breaks are not allowed\n\t\treturn undefined;\n\t}\n\treturn enclosed;\n};\n\nexports.indexOfClose = function(text, pos, openChar, closeChar) {\n\tvar close = pos-1,\n\t\topen = pos; // First char is open\n\tdo {\n\t\tclose = text.indexOf(closeChar, close+1);\n\t\tif (close &lt; 0) {\n\t\t\treturn -1;\n\t\t}\n\t\topen = text.indexOf(openChar, open+1);\n\t} while (open &gt;= 0 &amp;&amp; open &lt;= close);\n\treturn close;\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkmarkdownrule&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/markdownrulebase.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/markdownrulebase.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext/markdownrulebase.js\ntype: application/javascript\nmodule-type: global\n\nBase class for markdown parser rules\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar utils = require(\&quot;$:/plugins/flibbles/relink/js/utils/markdown\&quot;);\n\nvar MarkdownRuleBase = function() {};\n\nMarkdownRuleBase.prototype.init = function(parser) {\n\tthis.parser = parser;\n};\n\nMarkdownRuleBase.prototype.findNextMatch = function(startPos) {\n\tthis.matchRegExp.lastIndex = startPos;\n\twhile (this.match = this.matchRegExp.exec(this.parser.source)) {\n\t\tif (utils.indexOfParagraph(this.match[0]) &gt;= 0) {\n\t\t\tcontinue;\n\t\t}\n\t\tif (this.maxIndent !== undefined) {\n\t\t\tvar indent = utils.indentation(this.parser.source,this.match.index);\n\t\t\tif (indent &lt; 0\n\t\t\t || (this.parser.indent !== undefined\n\t\t\t  &amp;&amp; (indent &gt; this.parser.indent + this.maxIndent))) {\n\t\t\t\tcontinue;\n\t\t\t}\n\t\t\tvar nl = this.parser.source.lastIndexOf('\\n', this.match.index-1)+1;\n\t\t\tthis.indentString = this.parser.source.substring(nl, this.match.index);\n\t\t\treturn nl &lt; startPos ? startPos : nl;\n\t\t}\n\t\treturn this.match.index;\n\t}\n\treturn undefined;\n};\n\n\nexports.MarkdownRuleBase = MarkdownRuleBase;\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;global&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinktextoperator\ntitle: $:/plugins/flibbles/relink/js/relinkoperations/text/markdowntext.js\ntype: application/javascript\n\nThis relinks tiddlers which contain markdown. It tries to be agnostic to\nwhichever markdown plugin you're using.\n\n\\*/\n\n/*jslint node: false, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Placeholder = require(\&quot;$:/plugins/flibbles/relink/js/utils/placeholder.js\&quot;);\nvar settings = require('$:/plugins/flibbles/relink/js/settings.js');\nvar markdownHandler = settings.getType('markdown');\n\nexports[\&quot;text/x-markdown\&quot;] = function(tiddler, fromTitle, toTitle, options) {\n\tvar placeholder = new Placeholder();\n\tvar extraOptions = $tw.utils.extend(\n\t\t{\n\t\t\tcurrentTiddler: tiddler.fields.title,\n\t\t\tplaceholder: placeholder\n\t\t}, options);\n\tvar entry = markdownHandler.relink(tiddler.fields.text, fromTitle, toTitle, extraOptions);\n\tif (entry &amp;&amp; entry.output) {\n\t\t// If there's output, we've also got to prepend any macros\n\t\t// that the placeholder defined.\n\t\tvar preamble = placeholder.getPreamble();\n\t\tentry.output = preamble + entry.output\n\t}\n\treturn entry;\n};\n\n&quot;,
+            &quot;module-type&quot;: &quot;relinktextoperator&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink/js/utils/markdown.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink/js/utils/markdown.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: library\ntitle: $:/plugins/flibbles/relink/js/utils/markdown.js\ntype: application/javascript\n\nMethods used in markdown parsing.\n\n\\*/\n\n// tiddlywiki/markdown can't handle having these characters escaped, so we\n// need to unescape them.\nvar problemChars = {\n\t\&quot;23\&quot;: \&quot;#\&quot;,\n\t\&quot;24\&quot;: \&quot;$\&quot;,\n\t\&quot;26\&quot;: \&quot;&amp;\&quot;,\n\t\&quot;2B\&quot;: \&quot;+\&quot;,\n\t\&quot;2C\&quot;: \&quot;,\&quot;,\n\t\&quot;2F\&quot;: \&quot;/\&quot;,\n\t\&quot;3A\&quot;: \&quot;:\&quot;,\n\t\&quot;3B\&quot;: \&quot;;\&quot;,\n\t\&quot;3D\&quot;: \&quot;=\&quot;,\n\t\&quot;3F\&quot;: \&quot;?\&quot;,\n\t\&quot;40\&quot;: \&quot;@\&quot;,\n};\n\nexports.encodeLink = function(title) {\n\tvar encoded = encodeURIComponent(title),\n\t\tbalance = 0;\n\tencoded = encoded.replace(/[\\(\\)]/g, function(p) {\n\t\tif (p === '(') {\n\t\t\tif (balance &gt;=1) {\n\t\t\t\treturn '%28';\n\t\t\t} else {\n\t\t\t\tbalance++;\n\t\t\t}\n\t\t} else {\n\t\t\tif (balance &lt;= 0) {\n\t\t\t\treturn '%29';\n\t\t\t}\n\t\t\tbalance--;\n\t\t}\n\t\treturn p;\n\t});\n\twhile (balance--) {\n\t\tvar i = encoded.lastIndexOf('(');\n\t\tencoded = encoded.substr(0, i) + '%28' + encoded.substr(i+1);\n\t}\n\t// tiddlywiki/markdown can't handle these characters escaped\n\treturn encoded.replace(/%([0-9A-F]{2})/g, function(str, code) {\n\t\treturn problemChars[code] || str;\n\t});\n};\n\n// Returns index of next paragraph, or -1\nexports.indexOfParagraph = function(text, startPos) {\n\tvar regExp = /\\n\\s*\\n/mg;\n\tregExp.lastIndex = startPos || 0;\n\tvar match = regExp.exec(text);\n\treturn match ? regExp.lastIndex : -1;\n};\n\n/** Returns how much indentation there is between pos and the previous\n * newline (or other char).\n * tabs are counted as 4 chars.\n */\nexports.indentation = function(text, pos, startChar) {\n\tvar p = text.lastIndexOf(startChar || '\\n', pos-1);\n\tvar count = 0;\n\twhile (++p &lt; pos) {\n\t\tvar c = text.charAt(p);\n\t\tif (c === ' ') {\n\t\t\tcount++;\n\t\t} else if (c === '\\t') {\n\t\t\tcount = count + 4 - (count%4);\n\t\t} else {\n\t\t\treturn -1;\n\t\t}\n\t}\n\treturn count;\n};\n\n\nexports.getSettings = function(wiki) {\n\t// Stored here so it's only calculated once, but also so it's different\n\t// per tiddler for testing\n\tif (wiki._markdownSettings === undefined) {\n\t\tvar settings = Object.create(null);\n\t\tvar text = wiki.getTiddlerText(\&quot;$:/config/markdown/renderWikiText\&quot;);\n\t\tsettings.wikitext =  (text === undefined || text.toLowerCase() === \&quot;true\&quot;);\n\t\ttext = wiki.getTiddlerText(\&quot;$:/config/markdown/renderWikiTextPragma\&quot;);\n\t\tif (text) {\n\t\t\ttext = text.trim() + '\\n';\n\t\t} else {\n\t\t\ttext = '';\n\t\t}\n\t\tsettings.wikitextPragma = text;\n\t\twiki._markdownSettings = settings;\n\t}\n\treturn wiki._markdownSettings;\n};\n\n// This is the maximum length a reported caption may be\nexports.captionLength = 15;\n\n/** Abridges a string to one that is more log-friendly.\n */\nexports.abridge = function(string) {\n\tvar safe = string.replace(/\\s+/mg, ' ');\n\tif (safe.length &gt; this.captionLength) {\n\t\tsafe = safe.substr(0, this.captionLength) + \&quot;...\&quot;;\n\t}\n\treturn safe;\n};\n\n/**I don't actually use this, but I've kept the code around anyway.\n * The only time this plugin is installed and markdown isn't enabled would\n * be if the user forgot to install a markdown plugin, or they disabled it.\n * I GUESS Relink should still be Relinking markdown in that case.\n */\nexports.markdownEnabled = function() {\n\tif (_enabled === undefined) {\n\t\tvar test = $tw.wiki.renderText(\&quot;text/html\&quot;, \&quot;text/x-markdown\&quot;, \&quot;[test](#test)\&quot;);\n\t\t_enabled = (test.indexOf(\&quot;&lt;a\&quot;) &gt;= 0);\n\t}\n\treturn _enabled;\n};\nvar _enabled;\n&quot;,
+            &quot;module-type&quot;: &quot;library&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-markdown/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-markdown/readme&quot;,
+            &quot;text&quot;: &quot;Markdown support for Relink.\n\n...or Relink support for Markdown.\n\nThis supplimental plugin allows ''text/x-markdown'' files to be relinked. This means markdown linking syntax like `[Caption](#MyTiddler)` is supported. If your markdown supports wikitext markup as well, this will handle that too.\n\nThis plugin is designed for `tiddlywiki/markdown`, but it will also work for `anstosa/tw5-markdown` and others.\n&quot;
+        }
+    }
+}</pre>
+</div>
+<div author="Flibbles" core-version="&gt;=5.1.14" demo="http://flibbles.github.io/tw5-relink/" dependents="" description="Renames tiddlers with titles derived from Relinked tiddler" list="readme configuration" name="Relink Titles" parent-plugin="$:/plugins/flibbles/relink" plugin-type="plugin" source="https://github.com/flibbles/tw5-relink" title="$:/plugins/flibbles/relink-titles" type="application/json" version="1.10.2">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/config/flibbles/relink-titles/custom&quot;: {
+            &quot;title&quot;: &quot;$:/config/flibbles/relink-titles/custom&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/configuration&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/configuration&quot;,
+            &quot;caption&quot;: &quot;{{$:/plugins/flibbles/relink-titles/language/Caption}}&quot;,
+            &quot;tags&quot;: &quot;$:/tags/flibbles/relink/Configuration&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/plugins/flibbles/relink-titles/language/\n\\define customTiddler() $:/config/flibbles/relink-titles/custom\n\n&lt;&lt;lingo Help&gt;&gt;\n\n&lt;table&gt;\n&lt;tbody&gt;\n&lt;$list filter=\&quot;[[$:/tags/flibbles/relink-titles/Filter]tagging[]]\&quot;&gt;\n&lt;tr&gt;\n&lt;td&gt;\n&lt;$checkbox\n\ttiddler={{{ [all[current]addprefix[$:/config/flibbles/relink-titles/disabled/]] }}}\n\tfield=\&quot;text\&quot;\n\tchecked=\&quot;enabled\&quot;\n\tunchecked=\&quot;disabled\&quot;\n\tdefault=\&quot;enabled\&quot;\n&gt; ''{{!!caption}}''&lt;/$checkbox&gt;&lt;/td&gt;&lt;td&gt;\n\n&lt;$transclude /&gt;\n\n&lt;/td&gt;&lt;/tr&gt;&lt;/$list&gt;\n&lt;/tbody&gt;&lt;/table&gt;\n\n!!! &lt;&lt;lingo Custom/Caption&gt;&gt;\n\n&lt;&lt;lingo Hint&gt;&gt;\n&lt;$edit tag=\&quot;textarea\&quot; tiddler=&lt;&lt;customTiddler&gt;&gt; class=\&quot;tc-edit-texteditor\&quot;/&gt;\n\n&lt;!-- We want to sanity check the custom tiddler, but we can only do it on\n     Tiddlywiki versions that support \&quot;subfilter\&quot;. So first two filter steps\n     confirm that subfilter isn't just a field:subfilter[] operator. --&gt;\n&lt;$vars\n\tfromTiddler=\&quot;testTiddler\&quot;\n\ttoTiddler=\&quot;testTiddler\&quot;&gt;\n&lt;$list\n\tvariable=\&quot;erroneousTiddler\&quot;\n\tfilter=\&quot;[subfilter&lt;customTiddler&gt;field:title&lt;customTiddler&gt;subfilter{$:/config/flibbles/relink-titles/custom}]\&quot; &gt;\n\n{{$:/core/images/warning}} &lt;&lt;lingo Warning&gt;&gt;\n&lt;/$list&gt;&lt;/$vars&gt;\n&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/configuration/filters/directory&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/configuration/filters/directory&quot;,
+            &quot;caption&quot;: &quot;{{$:/plugins/flibbles/relink-titles/language/Directory/Caption}}&quot;,
+            &quot;filter&quot;: &quot;[removeprefix&lt;fromTiddler&gt;prefix[/]addprefix&lt;toTiddler&gt;]&quot;,
+            &quot;tags&quot;: &quot;$:/tags/flibbles/relink-titles/Filter&quot;,
+            &quot;text&quot;: &quot;{{$:/plugins/flibbles/relink-titles/language/Directory/Description}}\n&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/language/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/language/Caption&quot;,
+            &quot;text&quot;: &quot;Titles&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/language/Custom/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/language/Custom/Caption&quot;,
+            &quot;text&quot;: &quot;Custom&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/language/Directory/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/language/Directory/Caption&quot;,
+            &quot;text&quot;: &quot;Rename subdirectories&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/language/Directory/Description&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/language/Directory/Description&quot;,
+            &quot;text&quot;: &quot;For wikis set up hierarchically using `/`, like a filesystem. This option will update all tiddlers nested inside the target tiddler. i.e. `fromTiddler/path/file` becomes `toTiddler/path/file`.&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/language/Prefix/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/language/Prefix/Caption&quot;,
+            &quot;text&quot;: &quot;prefix for $:/prefix&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/language/Help&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/language/Help&quot;,
+            &quot;text&quot;: &quot;See the &lt;a href={{{ [{$:/plugins/flibbles/relink-titles!!demo}addsuffix[#Plugins/Titles]] }}}&gt;//Relink-titles// documentation page&lt;/a&gt; for details.&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/language/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/language/Hint&quot;,
+            &quot;text&quot;: &quot;The variables `fromTiddler` and `toTiddler` are defined as what the triggering relinked tiddler was and will be called.&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/language/Warning&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/language/Warning&quot;,
+            &quot;text&quot;: &quot;''Warning:'' This filter appears unsafe. It seems to indiscriminately change tiddlers into ''&lt;$text text=&lt;&lt;erroneousTiddler&gt;&gt; /&gt;'', and it will probably be thrown out.&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/readme&quot;,
+            &quot;text&quot;: &quot;Highly customizable relinking of tiddler titles //related// to the renamed tiddler.\n\n* Rename a hierarchy of subtiddlers when renaming a root tiddler.\n* Make custom filter rules to rename other tiddlers the way you want when Relinking.\n* Integrates with other plugins for plugin-specific rules.\n\nSee &lt;a href={{$:/plugins/flibbles/relink-titles!!source}}&gt;the tw5-relink website&lt;/a&gt; for more details and examples.\n\n{{$:/core/images/warning}} ''Warning:'' You must use //Relink// v1.10.2 or greater with this, or this plugin may delete some tiddler bodies while trying to relink titles.\n&quot;
+        },
+        &quot;$:/plugins/flibbles/relink-titles/relinkoperations/title.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/flibbles/relink-titles/relinkoperations/title.js&quot;,
+            &quot;text&quot;: &quot;/*\\\nmodule-type: relinkoperator\ntitle: $:/plugins/flibbles/relink-titles/relinkoperations/title.js\ntype: application/javascript\n\nRenames tiddlers which have titles derived from fromTitle. Then it makes\nsure that those tiddlers are properly relinked too.\n\n\\*/\n\n/*jslint node: false, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar customFilterTiddler = \&quot;$:/config/flibbles/relink-titles/custom\&quot;;\nvar filterTag = \&quot;$:/tags/flibbles/relink-titles/Filter\&quot;;\nvar configPrefix = \&quot;$:/config/flibbles/relink-titles/disabled/\&quot;;\nvar EntryNode = require('$:/plugins/flibbles/relink/js/utils/entry');\n\nvar TitleEntry = EntryNode.newType(\&quot;title\&quot;);\n\nTitleEntry.prototype.report = function() {\n\treturn [\&quot;title: \&quot; + this.title];\n};\n\nexports['title'] = function(tiddler, fromTitle, toTitle, changes, options) {\n\tvar cache = getCache(fromTitle, toTitle, options);\n\tif (!cache.touched[tiddler.fields.title]) {\n\t\tvar filters = cache.filters;\n\t\tvar widget = cache.widget;\n\t\tfor (var i = 0; i &lt; filters.length; i++) {\n\t\t\tvar filter = filters[i];\n\t\t\tvar output = filter.call(options.wiki, [tiddler.fields.title], widget);\n\t\t\tvar result = output[0];\n\t\t\tif (result &amp;&amp; (result !== tiddler.fields.title || fromTitle === toTitle)) {\n\t\t\t\tvar entry = new TitleEntry();\n\t\t\t\tentry.title = tiddler.fields.title;\n\t\t\t\tif (fromTitle !== toTitle &amp;&amp; (options.wiki.getTiddler(result) || cache.touched[result])) {\n\t\t\t\t\t// There's already a tiddler there. We won't clobber it.\n\t\t\t\t\tentry.impossible = true;\n\t\t\t\t} else {\n\t\t\t\t\tentry.output = result;\n\t\t\t\t}\n\t\t\t\tchanges.title = entry;\n\t\t\t\t// Record that we've touched this one, so we only touch it once.\n\t\t\t\t// Both its prior and latter. Neither should be touched again.\n\t\t\t\tcache.touched[tiddler.fields.title] = true;\n\t\t\t\tcache.touched[result] = true;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n};\n\nfunction getCache(fromTitle, toTitle, options) {\n\tif (!options.__titlesCache) {\n\t\t// we cache the dummy widget, the filters, and the touch list\n\t\t// in the options, so we only need to do this all once for\n\t\t// for an entire relink operation\n\t\tvar widget = getWidget(fromTitle, toTitle, options);\n\t\toptions.__titlesCache = {\n\t\t\twidget: widget,\n\t\t\tfilters: getFilters(widget, options),\n\t\t\ttouched: Object.create(null)\n\t\t};\n\t}\n\treturn options.__titlesCache;\n};\n\nfunction getWidget(fromTitle, toTitle, options) {\n\tvar parentWidget = options.wiki.makeWidget();\n\tparentWidget.setVariable('fromTiddler', fromTitle);\n\tparentWidget.setVariable('toTiddler', toTitle);\n\treturn options.wiki.makeWidget(null, {parentWidget: parentWidget});\n};\n\nfunction getFilters(widget, options) {\n\tvar subFilters = [];\n\t$tw.utils.each(options.wiki.getTiddlersWithTag(filterTag), function(title) {\n\t\tvar filter = getPresetFilter(title, options);\n\t\tif (filter) {\n\t\t\tsubFilters.push(filter);\n\t\t}\n\t});\n\tvar filter = getCustomFilter(widget, options);\n\tif (filter) {\n\t\tsubFilters.push(filter);\n\t}\n\treturn subFilters;\n};\n\nfunction getCustomFilter(widget, options) {\n\treturn options.wiki.getCacheForTiddler(customFilterTiddler, \&quot;relinkFilter\&quot;, function() {\n\t\tvar tiddler = options.wiki.getTiddler(customFilterTiddler);\n\t\tif (tiddler &amp;&amp; tiddler.fields.text) {\n\t\t\tvar filter = options.wiki.compileFilter(tiddler.fields.text);\n\t\t\t// We sanity test the custom filter. Make sure it wouldn't change\n\t\t\t// itself.\n\t\t\tvar testOutput = filter.call(options.wiki, [customFilterTiddler], widget);\n\t\t\tif (testOutput.length == 0) {\n\t\t\t\treturn filter;\n\t\t\t}\n\t\t}\n\t\treturn null;\n\t});\n};\n\nfunction getPresetFilter(title, options) {\n\tvar configTiddler = options.wiki.getTiddler(configPrefix + title);\n\tif (configTiddler &amp;&amp; configTiddler.fields.text === \&quot;disabled\&quot;) {\n\t\treturn null;\n\t}\n\treturn options.wiki.getCacheForTiddler(title, \&quot;relinkFilter\&quot;, function() {\n\t\tvar tiddler = options.wiki.getTiddler(title);\n\t\tif (tiddler &amp;&amp; tiddler.fields.filter) {\n\t\t\treturn options.wiki.compileFilter(tiddler.fields.filter);\n\t\t} else {\n\t\t\treturn null;\n\t\t}\n\t});\n};\n&quot;,
+            &quot;module-type&quot;: &quot;relinkoperator&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;
+        }
+    }
+}</pre>
+</div>
 <div author="Joao Bolila" dependents="" description="Highlight.js syntax highlighting" list="readme usage howto license" name="Highlight" plugin-type="plugin" title="$:/plugins/tiddlywiki/highlight" type="application/json" version="5.1.23">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -14602,7 +14730,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div dependents="" description="Markdown parser based on remarkable by Jon Schlinkert" list="readme usage" name="Markdown" plugin-type="plugin" title="$:/plugins/tiddlywiki/markdown" type="application/json" version="5.1.23">
+<div dependents="" description="Markdown parser based on remarkable by Jon Schlinkert" list="readme usage" name="Markdown" plugin-type="plugin" title="$:/plugins/tiddlywiki/markdown" type="application/json" version="5.1.24-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tiddlywiki/markdown/EditorToolbar/bold&quot;: {
@@ -14850,9 +14978,9 @@ Error message and password prompt
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>no</pre>
+<pre>yes</pre>
 </div>
-<div list="Knowledge-Bases" title="$:/StoryList">
+<div list="$:/Import Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -14871,7 +14999,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210223141025282&quot;
+            &quot;text&quot;: &quot;20210224031937382&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -14907,15 +15035,15 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1536&quot;
+            &quot;text&quot;: &quot;1280&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;864&quot;
+            &quot;text&quot;: &quot;720&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
-            &quot;text&quot;: &quot;en-US&quot;
+            &quot;text&quot;: &quot;zh-CN&quot;
         }
     }
 }</pre>
@@ -15364,6 +15492,494 @@ https://leetcode-cn.com/problems/sliding-window-maximum/solution/hua-dong-chuang
 <div created="20210202030531634" modified="20210220022218497" tags="Tools Articles" title="50-developer-tools-to-make-your-life-a-little-easier-4oc5" type="text/x-markdown">
 <pre>[https://dev.to/iainfreestone/50-developer-tools-to-make-your-life-a-little-easier-4oc5](https://dev.to/iainfreestone/50-developer-tools-to-make-your-life-a-little-easier-4oc5)</pre>
 </div>
+<div created="20210207095211286" modified="20210207100445785" tags="JavaScript javascript.info" title="常用的类型转换:转换为 string 类型、转换为 number 类型和转换为 boolean 类型" type="text/x-markdown">
+<pre>字符串转换 
+- 转换发生在输出内容的时候
+- 或通过 String(value) 进行显式转换。
+
+数字型转换
+- 转换发生在进行算术操作时
+- 或通过 Number(value) 进行显式转换
+- 规则：
+ - Number(undefined);// NaN
+ - Number(null);// 0
+ - Number(true);// 1
+ - Number(false);// 0
+ - Number(str);// 原样读取str字符串，忽略两端空白，空字符串转换为0，出错则为NaN
+
+布尔型转换
+- 转换发生在进行逻辑操作时
+- 可以通过 Boolean(value) 进行显式转换
+- Boolean(0);//false
+- Boolean(null);//false
+- Boolean(undefined);//false
+- Boolean(NaN);//false
+- Boolean(&quot;&quot;);//false
+- Boolean(&quot; &quot;);//true
+- Boolean(&quot;0&quot;);//true
+
+
+</pre>
+</div>
+<div created="20210207091935943" modified="20210207092934286" tags="JavaScript javascript.info" title="大写形式的常数" type="text/x-markdown">
+<pre>一个普遍的做法是将常量用作别名，以便记住那些在执行之前就已知的难以记住的值。
+
+**使用大写字母和下划线来命名这些常量**。
+
+例如，让我们以所谓的“web”（十六进制）格式为颜色声明常量：
+```js
+const COLOR_RED = &quot;#F00&quot;;
+const COLOR_GREEN = &quot;#0F0&quot;;
+const COLOR_BLUE = &quot;#00F&quot;;
+const COLOR_ORANGE = &quot;#FF7F00&quot;;
+
+// ……当我们需要选择一个颜色
+let color = COLOR_ORANGE;
+alert(color); // #FF7F00
+```
+好处：
+
+-  `COLOR_ORANGE` 比 `&quot;#FF7F00&quot;` 更容易记忆。
+- 比起 `COLOR_ORANGE` 而言，`&quot;#FF7F00&quot;` 更容易输错。
+- 阅读代码时，`COLOR_ORANGE` 比 `#FF7F00` 更易懂。
+---
+什么时候该为常量使用大写命名，什么时候进行常规命名？让我们弄清楚一点。
+
+作为一个“常数”，意味着值永远不变。**但是有些常量在执行之前就已知了（比如红色的十六进制值），还有些在执行期间被“计算”出来，但初始赋值之后就不会改变**。
+
+例如：
+```js
+const pageLoadTime = /* 网页加载所需的时间 */;
+```
+**`pageLoadTime` 的值在页面加载之前是未知的，所以采用常规命名。但是它仍然是个常量，因为赋值之后不会改变。**
+
+换句话说，**大写命名的常量仅用作“硬编码（hard-coded）”值的别名**。**当值在执行之前或在被写入代码的时候，我们就知道值是什么了**。</pre>
+</div>
+<div created="20210219061319640" modified="20210219061625595" tags="LinkedList Algorithms Data-Structure CodeSnippets LeetCode" title="反转链表" type="text/x-markdown">
+<pre>方法一，头插法
+
+```js
+var reverseListOptmization = function (head) {
+
+    let newHead = new ListNode(0);
+
+    while (head) {
+        let insert = head;
+        head = head.next;
+        insert.next = newHead.next;
+        newHead.next = insert;
+    }
+
+    return newHead.next;
+};
+```
+方法二，迭代法
+
+```js
+var reverseListOptmization1 = function (head) {
+
+    let prev = null;
+
+    while (head) {
+        let curr = head;
+        head = head.next;
+        curr.next = prev;
+        prev = curr;
+    }
+
+    return prev;
+};
+```
+
+方法三，递归法
+
+```js
+var reverseList = function(head) {
+
+    if(!head || !head.next){
+        return head;
+    }
+
+    let newHead = reverseList(head.next);
+
+    head.next.next = head;
+    head.next = null;
+
+    return newHead;
+};
+```</pre>
+</div>
+<div created="20210209025721707" modified="20210209065937195" tags="TypeScript" title="非空断言（non-null-assertion-operator）！" type="text/x-markdown">
+<pre>[https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator)
+
+非空断言，排除前面为null和undefined的情况，简直和 ?? 一模一样 :cold_sweat: </pre>
+</div>
+<div created="20210207101829653" modified="20210207102024265" tags="JavaScript javascript.info" title="赋值 `=` 返回一个值" type="text/x-markdown">
+<pre>在 JavaScript 中，大多数运算符都会返回一个值。这对于 + 和 - 来说是显而易见的，但对于 = 来说也是如此。
+
+**语句 x = value 将值 value 写入 x 然后返回 x。**
+
+```js
+let a = 1;
+let b = 2;
+
+let c = 3 - (a = b + 1);
+
+alert( a ); // 3
+alert( c ); // 0
+```
+上面这个例子，(a = b + 1) 的结果是赋给 a 的值（也就是 3）。然后该值被用于进一步的运算。
+
+有时我们会在 JavaScript 库中看到它。不过，请不要写这样的代码。这样的技巧绝对不会使代码变得更清晰或可读。
+</pre>
+</div>
+<div created="20210209084505273" modified="20210209084702032" tags="JavaScript javascript.info" title="函数 return 返回值" type="text/x-markdown">
+<pre>1.**空值的 return 或没有 return 的函数返回值为 undefined**
+
+2.**不要在 return 与返回值之间添加新行**
+
+对于 return 的长表达式，可能你会很想将其放在单独一行，如下所示：
+```js
+return
+ (some + long + expression + or + whatever * f(a) + f(b))
+```
+但这不行，因为 JavaScript 默认会在 return 之后加上分号。上面这段代码和下面这段代码运行流程相同：
+```js
+return;
+ (some + long + expression + or + whatever * f(a) + f(b))
+```
+因此，实际上它的返回值变成了空值。
+</pre>
+</div>
+<div created="20210209090844152" modified="20210209091032579" tags="JavaScript javascript.info" title="函数表达式末尾会有个分号？" type="text/x-markdown">
+<pre>为什么函数表达式结尾有一个分号 ;，而函数声明没有：
+```js
+function sayHi() {
+  // ...
+}
+
+let sayHi = function() {
+  // ...
+};
+```
+答案很简单：
+
+- 在代码块的结尾不需要加分号 ;，像` if { ... }，for { }，function f { } `等语法结构后面都不用加。
+- 函数表达式是在语句内部的：`let sayHi = ...;`，作为一个值。它不是代码块而是一个赋值语句。不管值是什么，都建议在语句末尾添加分号 ;。所以这里的分号与函数表达式本身没有任何关系，它只是用于终止语句。
+</pre>
+</div>
+<div created="20210209065006167" modified="20210209070903168" tags="JavaScript javascript.info" title="空值合并运算符（nullish coalescing operator） ??" type="text/x-markdown">
+<pre>将值既不是 null 也不是 undefined 的表达式**定义为**“已定义的（defined）。
+
+a ?? b 的结果是：
+
+- 如果 a 是已定义的，则结果为 a，
+- 如果 a 不是已定义的，则结果为 b。
+
+换句话说，如果第一个参数不是 null/undefined，则 ?? 返回第一个参数。否则，返回第二个参数
+
+```js
+result = a ?? b
+
+// 等价于
+
+result = (a !== null &amp;&amp; a !== undefined) ? a : b;
+
+```
+
+场景：
+
+```js
+
+// 1. 为可能是未定义的变量提供一个默认值
+
+let user;
+
+alert(user ?? &quot;Anonymous&quot;); // Anonymous
+
+// 2. 可以使用 ?? 序列从一系列的值中选择出第一个非 null/undefined 的值
+
+let firstName = null;
+let lastName = null;
+let nickName = &quot;Supercoder&quot;;
+
+// 显示第一个已定义的值：
+alert(firstName ?? lastName ?? nickName ?? &quot;Anonymous&quot;); // Supercoder
+
+```
+
+**|| 和 ??之间重要的区别是**：
+
+-    || 返回第一个 真 值
+-   ?? 返回第一个 已定义的 值
+</pre>
+</div>
+<div created="20210223125728920" modified="20210223125935264" tags="Stack CodeSnippets" title="利用‘栈’求左/右边第一个比当前值大的办法">
+<pre>```js
+
+var constructMaximum = function(nums) {
+    // 栈底到栈顶单调递减
+    let stack = [];
+
+    // 存储左边第一个比自己大数组
+    let leftMax = new Array(nums.length).fill(-1);
+    // 存储右边第一个比自己大值数组
+    let rightMax = new Array(nums.length).fill(-1);
+
+    for(let i = 0;i&lt;nums.length;i++){
+        while(stack.length &amp;&amp; nums[stack[stack.length -1]] &lt; nums[i]){
+            rightMax[stack.pop()] = i;
+        }
+
+        if(stack.length !== 0){
+            leftMax[i] = stack[stack.length -1]
+        }
+
+        stack.push(i)
+    }
+
+    console.log(leftMax,rightMax);
+
+};
+
+```</pre>
+</div>
+<div created="20210219101110697" modified="20210219101241011" tags="LeetCode Algorithms Data-Structure CodeSnippets" title="链表的后半部分(中间节点)" type="text/x-markdown">
+<pre>```js
+function middleNodeOptmization(head) {
+    let slow = fast = head;
+
+    while (fast.next !== null &amp;&amp; fast.next.next !== null) {
+        slow = slow.next
+        fast = fast.next.next
+    }
+
+    return slow;
+}
+
+```</pre>
+</div>
+<div created="20210209063739330" modified="20210209063900143" tags="JavaScript javascript.info" title="逻辑 非 运算符" type="text/x-markdown">
+<pre>逻辑非运算符接受一个参数，并按如下运作：
+
+- 将操作数转化为布尔类型：true/false。
+- **返回相反的值。**
+
+
+**两个非运算 !! 有时候用来将某个值转化为布尔类型**</pre>
+</div>
+<div created="20210209060624703" modified="20210209064858783" tags="JavaScript javascript.info" title="逻辑 或 运算符" type="text/x-markdown">
+<pre>**一个或运算 || 的链，将返回第一个真值，如果不存在真值，就返回该链的最后一个值。** 返回的值是操作数的初始形式，**不会做布尔转换**。与“纯粹的、传统的、仅仅处理布尔值的或运算”相比，这个规则就引起了一些很有趣的用法：
+
+1. **获取变量列表或者表达式中的第一个真值**
+
+    ```js
+        // 例如，我们有变量 firstName、lastName 和 nickName，都是可选的（即可以是 undefined，也可以是假值）。
+
+        // 我们用或运算 || 来选择有数据的那一个，并显示出来（如果没有设置，则用 &quot;Anonymous&quot;）：
+
+        let firstName = &quot;&quot;;
+        let lastName = &quot;&quot;;
+        let nickName = &quot;SuperCoder&quot;;
+
+        alert( firstName || lastName || nickName || &quot;Anonymous&quot;); // SuperCoder
+
+        // 如果所有变量的值都为假，结果就是 &quot;Anonymous&quot;。
+    ```
+2. **短路求值（Short-circuit evaluation）**
+   ```js
+        // 或运算符 || 的另一个用途是所谓的“短路求值”。
+
+        // 这指的是，|| 对其参数进行处理，直到达到第一个真值，然后立即返回该值，而无需处理其他参数。
+
+        //如果操作数不仅仅是一个值，而是一个有副作用的表达式，例如变量赋值或函数调用，那么这一特性的重要性就变得显而易见了。
+
+        //在下面这个例子中，只会打印第二条信息：
+
+        true || alert(&quot;not printed&quot;);
+        false || alert(&quot;printed&quot;);
+
+        // 在第一行中，或运算符 || 在遇到 true 时立即停止运算，所以 alert 没有运行。
+
+        // 有时，人们利用这个特性，只在左侧的条件为假时才执行命令。
+   ```</pre>
+</div>
+<div created="20210209062700965" modified="20210209064839639" tags="JavaScript javascript.info" title="逻辑 与 运算符" type="text/x-markdown">
+<pre>**与运算返回第一个假值，如果没有假值就返回最后一个值**，返回的值是操作数的初始形式，**不会做布尔转换**。
+
+1. **获取变量列表或者表达式中的第一个假值。**
+
+```js
+    alert( 1 &amp;&amp; 2 &amp;&amp; null &amp;&amp; 3 ); // null
+```
+
+2. **短路求值（Short-circuit evaluation）:如果所有的值都是真值，最后一个值将会被返回**
+
+```js
+    alert( 1 &amp;&amp; 2 &amp;&amp; 3 ); // 3，最后一个值
+```
+
+与运算 &amp;&amp; 的优先级比或运算 || 要高</pre>
+</div>
+<div created="20210219020601149" modified="20210219021009705" tags="Resume Front-End" title="前端简历参考" type="text/x-markdown">
+<pre>[https://ustbhuangyi.github.io/resume/](https://ustbhuangyi.github.io/resume/)
+
+[https://hacknical.com/csvwolf/resume?locale=zh](https://hacknical.com/csvwolf/resume?locale=zh)</pre>
+</div>
+<div created="20210202025511185" modified="20210202095356143" tags="Front-End" title="前端进阶之路" type="text/x-markdown">
+<pre>[前端p6什么水平？如何衡量？](https://www.zhihu.com/question/61281984/answer/1306626251)
+
+[高级进阶指南](https://github.com/sl1673495/blogs/issues/37)
+
+[前端精读周刊](https://github.com/dt-fe/weekly)
+
+[react 技术揭秘](https://github.com/BetaSu/just-react)
+
+[build-your-own-react](https://pomb.us/build-your-own-react/)
+
+
+
+
+
+
+</pre>
+</div>
+<div created="20210218110522038" modified="20210218111236466" tags="Algorithms Data-Structure LeetCode LinkedList CodeSnippets" title="删除链表中的节点" type="text/x-markdown">
+<pre>方法一：知道前驱节点
+```js
+preNode.next = delNode.next;
+```
+
+方法二:不知道前驱节点
+
+```js
+// 用后继节点的值替换待删除节点的值
+delNode.val = nextNode.val;
+delNode.next = nextNode.next.next;//待删除的节点不能是尾节点
+```
+
+
+
+[https://leetcode-cn.com/problems/delete-node-in-a-linked-list/solution/shan-chu-lian-biao-zhong-de-jie-dian-by-leetcode/](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/solution/shan-chu-lian-biao-zhong-de-jie-dian-by-leetcode/)</pre>
+</div>
+<div created="20210211150116721" modified="20210211150309975" tags="LeetCode Algorithms Data-Structure LinkedList" title="哨兵节点" type="text/x-markdown">
+<pre>**可以通过哨兵节点去解决它，哨兵节点广泛应用于树和链表中，如伪头、伪尾、标记等，它们是纯功能的，通常不保存任何数据，其主要目的是使链表标准化，如使链表永不为空、永不无头、简化插入和删除。**
+
+[https://leetcode-cn.com/problems/remove-linked-list-elements/solution/yi-chu-lian-biao-yuan-su-by-leetcode/](https://leetcode-cn.com/problems/remove-linked-list-elements/solution/yi-chu-lian-biao-yuan-su-by-leetcode/)</pre>
+</div>
+<div created="20210207093132514" modified="20210207094935531" tags="JavaScript javascript.info" title="数据类型" type="text/x-markdown">
+<pre>在 JavaScript 中有 8 种基本的数据类型（译注：**7 种原始类型(基本数据类型)和 1 种引用类型(复杂数据类型)**）
+- `number`
+- `bigint`
+- `string`
+- `boolean`
+- `null`
+- `undefined`
+- `symbol`
+- `object`
+
+可以通过 `typeof` 运算符查看存储在变量中的数据类型
+
+- 两种形式：`typeof x` 或者 `typeof(x)`
+- 以字符串的形式返回类型名称，例如 `&quot;string&quot;`
+- `typeof null` 会返回 `&quot;object&quot;` —— 这是 JavaScript 编程语言的一个错误，实际上它并不是一个 object
+- `typeof alert` 的结果是 `&quot;function&quot;`。在 JavaScript 语言中没有一个特别的 `“function”` 类型。函数隶属于 object 类型。但是 `typeof` 会对函数区分对待，并返回 `&quot;function&quot;`。这也是来自于 JavaScript 语言早期的问题。*从技术上讲，这种行为是不正确的，但在实际编程中却非常方便。*
+
+
+</pre>
+</div>
+<div created="20210202030629251" modified="20210202095248411" tags="Algorithms Data-Structure JavaScript" title="算法与数据结构" type="text/x-markdown">
+<pre>https://github.com/trekhleb/javascript-algorithms
+
+https://visualgo.net/en
+
+https://github.com/CoderMJLee/BinaryTrees</pre>
+</div>
+<div created="20210223141041975" modified="20210223141523181" tags="Array CodeSnippets" title="同时从头/从尾遍历数组">
+<pre>```js
+
+for (var i = 0; i &lt; arrary.length; i++) {
+
+    let sequential = arrary[i];
+    let reverse = arrary[arrary.length - 1 - i];
+
+    //...
+}
+```</pre>
+</div>
+<div created="20210210142747174" modified="20210210142927921" tags="" title="同事就是同事，不是朋友" type="text/x-markdown">
+<pre>listen more, watch more, speak less.
+
+if you need help, come with specific questions, do not ask for a entire training.
+
+if you need your boss to decide, give him options to choose, not questions to answer.
+(fresh rebuild system, RIME not installed yet. )</pre>
+</div>
+<div created="20210207090950540" modified="20210207091554770" tags="javascript.info JavaScript" title="现代模式，&quot;use strict&quot;" type="text/x-markdown">
+<pre>长久以来，JavaScript 不断向前发展且并未带来任何兼容性问题。新的特性被加入，旧的功能也没有改变。这么做有利于兼容旧代码，但缺点是 JavaScript 创造者的任何错误或不完善的决定也将永远被保留在 JavaScript 语言中。
+
+这种情况一直持续到 2009 年 ECMAScript 5 (ES5) 的出现。ES5 规范增加了新的语言特性并且修改了一些已经存在的特性。为了保证旧的功能能够使用，大部分的修改是默认不生效的。你需要一个特殊的指令 —— &quot;use strict&quot; 来明确地激活这些特性。
+
+
+- 脚本文件的顶部
+- 函数体的开头
+- “classes” 和 “modules”自动启用`'use strict'`
+
+---
+
+- 没有办法取消 `'use strict'`
+
+- console控制台`'use strict'; &lt;Shift+Enter 换行&gt;`</pre>
+</div>
+<div created="20210202030500406" modified="20210202095136028" tags="Blog" title="优质中文博客" type="text/x-markdown">
+<pre>https://github.com/AlanWei/blog
+
+https://github.com/LuckyWinty/blog
+
+https://www.bmpi.dev/
+
+https://geekplux.com/
+</pre>
+</div>
+<div created="20210209053750050" modified="20210209054405121" tags="javascript.info JavaScript" title="在比较字符串的大小时，JavaScript 会使用“字典（dictionary）”或“词典（lexicographical）”顺序进行判定" type="text/x-markdown">
+<pre>换言之，字符串是按字符（母）逐个进行比较的。
+
+例如：
+```js
+alert( 'Z' &gt; 'A' ); // true
+alert( 'Glow' &gt; 'Glee' ); // true
+alert( 'Bee' &gt; 'Be' ); // true
+```
+
+字符串的比较算法非常简单：
+- 首先比较两个字符串的首位字符大小
+- 如果一方字符较大（或较小），则该字符串大于（或小于）另一个字符串。算法结束。
+- 否则，如果两个字符串的首位字符相等，则继续取出两个字符串各自的后一位字符进行比较
+- 重复上述步骤进行比较，直到比较完成某字符串的所有字符为止
+- 如果两个字符串的字符同时用完，那么则判定它们相等，否则未结束（还有未比较的字符）的字符串更大
+
+
+
+**非真正的字典顺序，而是 Unicode 编码顺序**
+
+这是因为在 JavaScript 使用的内部编码表中（Unicode），小写字母的字符索引值更大。
+
+
+
+</pre>
+</div>
+<div created="20210209055453604" modified="20210209055550305" tags="javascript.info JavaScript" title="值的比较" type="text/x-markdown">
+<pre>避免问题：
+
+- 除了严格相等 === 外，其他但凡是有 undefined/null 参与的比较，我们都需要格外小心。
+- 除非你非常清楚自己在做什么，否则永远不要使用 &gt;= &gt; &lt; &lt;= 去比较一个可能为 null/undefined 的变量。对于取值可能是 null/undefined 的变量，请按需要分别检查它的取值情况。
+</pre>
+</div>
+<div created="20210207101342161" modified="20210207101646048" tags="JavaScript javascript.info" title="自增/自减" type="text/x-markdown">
+<pre>**所有的运算符都有返回值**，自增/自减也不例外
+- 前置形式返回一个新的值
+- 后置返回原来的值（做加法/减法之前的值）</pre>
+</div>
 <div created="20210220024634466" modified="20210220024740916" tags="Github React Awesome" title="awesome-react" type="text/x-markdown">
 <pre>[https://github.com/enaqx/awesome-react](https://github.com/enaqx/awesome-react)</pre>
 </div>
@@ -15765,494 +16381,6 @@ Bookmarks
 <pre>1nd-ed [https://github.com/getify/You-Dont-Know-JS/tree/1st-ed](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed)
 
 2nd-ed [https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md)</pre>
-</div>
-<div created="20210202030500406" modified="20210202095136028" tags="Blog" title="优质中文博客" type="text/x-markdown">
-<pre>https://github.com/AlanWei/blog
-
-https://github.com/LuckyWinty/blog
-
-https://www.bmpi.dev/
-
-https://geekplux.com/
-</pre>
-</div>
-<div created="20210209055453604" modified="20210209055550305" tags="javascript.info JavaScript" title="值的比较" type="text/x-markdown">
-<pre>避免问题：
-
-- 除了严格相等 === 外，其他但凡是有 undefined/null 参与的比较，我们都需要格外小心。
-- 除非你非常清楚自己在做什么，否则永远不要使用 &gt;= &gt; &lt; &lt;= 去比较一个可能为 null/undefined 的变量。对于取值可能是 null/undefined 的变量，请按需要分别检查它的取值情况。
-</pre>
-</div>
-<div created="20210209084505273" modified="20210209084702032" tags="JavaScript javascript.info" title="函数 return 返回值" type="text/x-markdown">
-<pre>1.**空值的 return 或没有 return 的函数返回值为 undefined**
-
-2.**不要在 return 与返回值之间添加新行**
-
-对于 return 的长表达式，可能你会很想将其放在单独一行，如下所示：
-```js
-return
- (some + long + expression + or + whatever * f(a) + f(b))
-```
-但这不行，因为 JavaScript 默认会在 return 之后加上分号。上面这段代码和下面这段代码运行流程相同：
-```js
-return;
- (some + long + expression + or + whatever * f(a) + f(b))
-```
-因此，实际上它的返回值变成了空值。
-</pre>
-</div>
-<div created="20210209090844152" modified="20210209091032579" tags="JavaScript javascript.info" title="函数表达式末尾会有个分号？" type="text/x-markdown">
-<pre>为什么函数表达式结尾有一个分号 ;，而函数声明没有：
-```js
-function sayHi() {
-  // ...
-}
-
-let sayHi = function() {
-  // ...
-};
-```
-答案很简单：
-
-- 在代码块的结尾不需要加分号 ;，像` if { ... }，for { }，function f { } `等语法结构后面都不用加。
-- 函数表达式是在语句内部的：`let sayHi = ...;`，作为一个值。它不是代码块而是一个赋值语句。不管值是什么，都建议在语句末尾添加分号 ;。所以这里的分号与函数表达式本身没有任何关系，它只是用于终止语句。
-</pre>
-</div>
-<div created="20210218110522038" modified="20210218111236466" tags="Algorithms Data-Structure LeetCode LinkedList CodeSnippets" title="删除链表中的节点" type="text/x-markdown">
-<pre>方法一：知道前驱节点
-```js
-preNode.next = delNode.next;
-```
-
-方法二:不知道前驱节点
-
-```js
-// 用后继节点的值替换待删除节点的值
-delNode.val = nextNode.val;
-delNode.next = nextNode.next.next;//待删除的节点不能是尾节点
-```
-
-
-
-[https://leetcode-cn.com/problems/delete-node-in-a-linked-list/solution/shan-chu-lian-biao-zhong-de-jie-dian-by-leetcode/](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/solution/shan-chu-lian-biao-zhong-de-jie-dian-by-leetcode/)</pre>
-</div>
-<div created="20210223125728920" modified="20210223125935264" tags="Stack CodeSnippets" title="利用‘栈’求左/右边第一个比当前值大的办法">
-<pre>```js
-
-var constructMaximum = function(nums) {
-    // 栈底到栈顶单调递减
-    let stack = [];
-
-    // 存储左边第一个比自己大数组
-    let leftMax = new Array(nums.length).fill(-1);
-    // 存储右边第一个比自己大值数组
-    let rightMax = new Array(nums.length).fill(-1);
-
-    for(let i = 0;i&lt;nums.length;i++){
-        while(stack.length &amp;&amp; nums[stack[stack.length -1]] &lt; nums[i]){
-            rightMax[stack.pop()] = i;
-        }
-
-        if(stack.length !== 0){
-            leftMax[i] = stack[stack.length -1]
-        }
-
-        stack.push(i)
-    }
-
-    console.log(leftMax,rightMax);
-
-};
-
-```</pre>
-</div>
-<div created="20210219020601149" modified="20210219021009705" tags="Resume Front-End" title="前端简历参考" type="text/x-markdown">
-<pre>[https://ustbhuangyi.github.io/resume/](https://ustbhuangyi.github.io/resume/)
-
-[https://hacknical.com/csvwolf/resume?locale=zh](https://hacknical.com/csvwolf/resume?locale=zh)</pre>
-</div>
-<div created="20210202025511185" modified="20210202095356143" tags="Front-End" title="前端进阶之路" type="text/x-markdown">
-<pre>[前端p6什么水平？如何衡量？](https://www.zhihu.com/question/61281984/answer/1306626251)
-
-[高级进阶指南](https://github.com/sl1673495/blogs/issues/37)
-
-[前端精读周刊](https://github.com/dt-fe/weekly)
-
-[react 技术揭秘](https://github.com/BetaSu/just-react)
-
-[build-your-own-react](https://pomb.us/build-your-own-react/)
-
-
-
-
-
-
-</pre>
-</div>
-<div created="20210219061319640" modified="20210219061625595" tags="LinkedList Algorithms Data-Structure CodeSnippets LeetCode" title="反转链表" type="text/x-markdown">
-<pre>方法一，头插法
-
-```js
-var reverseListOptmization = function (head) {
-
-    let newHead = new ListNode(0);
-
-    while (head) {
-        let insert = head;
-        head = head.next;
-        insert.next = newHead.next;
-        newHead.next = insert;
-    }
-
-    return newHead.next;
-};
-```
-方法二，迭代法
-
-```js
-var reverseListOptmization1 = function (head) {
-
-    let prev = null;
-
-    while (head) {
-        let curr = head;
-        head = head.next;
-        curr.next = prev;
-        prev = curr;
-    }
-
-    return prev;
-};
-```
-
-方法三，递归法
-
-```js
-var reverseList = function(head) {
-
-    if(!head || !head.next){
-        return head;
-    }
-
-    let newHead = reverseList(head.next);
-
-    head.next.next = head;
-    head.next = null;
-
-    return newHead;
-};
-```</pre>
-</div>
-<div created="20210210142747174" modified="20210210142927921" tags="" title="同事就是同事，不是朋友" type="text/x-markdown">
-<pre>listen more, watch more, speak less.
-
-if you need help, come with specific questions, do not ask for a entire training.
-
-if you need your boss to decide, give him options to choose, not questions to answer.
-(fresh rebuild system, RIME not installed yet. )</pre>
-</div>
-<div created="20210223141041975" modified="20210223141523181" tags="Array CodeSnippets" title="同时从头/从尾遍历数组">
-<pre>```js
-
-for (var i = 0; i &lt; arrary.length; i++) {
-
-    let sequential = arrary[i];
-    let reverse = arrary[arrary.length - 1 - i];
-
-    //...
-}
-```</pre>
-</div>
-<div created="20210211150116721" modified="20210211150309975" tags="LeetCode Algorithms Data-Structure LinkedList" title="哨兵节点" type="text/x-markdown">
-<pre>**可以通过哨兵节点去解决它，哨兵节点广泛应用于树和链表中，如伪头、伪尾、标记等，它们是纯功能的，通常不保存任何数据，其主要目的是使链表标准化，如使链表永不为空、永不无头、简化插入和删除。**
-
-[https://leetcode-cn.com/problems/remove-linked-list-elements/solution/yi-chu-lian-biao-yuan-su-by-leetcode/](https://leetcode-cn.com/problems/remove-linked-list-elements/solution/yi-chu-lian-biao-yuan-su-by-leetcode/)</pre>
-</div>
-<div created="20210209053750050" modified="20210209054405121" tags="javascript.info JavaScript" title="在比较字符串的大小时，JavaScript 会使用“字典（dictionary）”或“词典（lexicographical）”顺序进行判定" type="text/x-markdown">
-<pre>换言之，字符串是按字符（母）逐个进行比较的。
-
-例如：
-```js
-alert( 'Z' &gt; 'A' ); // true
-alert( 'Glow' &gt; 'Glee' ); // true
-alert( 'Bee' &gt; 'Be' ); // true
-```
-
-字符串的比较算法非常简单：
-- 首先比较两个字符串的首位字符大小
-- 如果一方字符较大（或较小），则该字符串大于（或小于）另一个字符串。算法结束。
-- 否则，如果两个字符串的首位字符相等，则继续取出两个字符串各自的后一位字符进行比较
-- 重复上述步骤进行比较，直到比较完成某字符串的所有字符为止
-- 如果两个字符串的字符同时用完，那么则判定它们相等，否则未结束（还有未比较的字符）的字符串更大
-
-
-
-**非真正的字典顺序，而是 Unicode 编码顺序**
-
-这是因为在 JavaScript 使用的内部编码表中（Unicode），小写字母的字符索引值更大。
-
-
-
-</pre>
-</div>
-<div created="20210207091935943" modified="20210207092934286" tags="JavaScript javascript.info" title="大写形式的常数" type="text/x-markdown">
-<pre>一个普遍的做法是将常量用作别名，以便记住那些在执行之前就已知的难以记住的值。
-
-**使用大写字母和下划线来命名这些常量**。
-
-例如，让我们以所谓的“web”（十六进制）格式为颜色声明常量：
-```js
-const COLOR_RED = &quot;#F00&quot;;
-const COLOR_GREEN = &quot;#0F0&quot;;
-const COLOR_BLUE = &quot;#00F&quot;;
-const COLOR_ORANGE = &quot;#FF7F00&quot;;
-
-// ……当我们需要选择一个颜色
-let color = COLOR_ORANGE;
-alert(color); // #FF7F00
-```
-好处：
-
--  `COLOR_ORANGE` 比 `&quot;#FF7F00&quot;` 更容易记忆。
-- 比起 `COLOR_ORANGE` 而言，`&quot;#FF7F00&quot;` 更容易输错。
-- 阅读代码时，`COLOR_ORANGE` 比 `#FF7F00` 更易懂。
----
-什么时候该为常量使用大写命名，什么时候进行常规命名？让我们弄清楚一点。
-
-作为一个“常数”，意味着值永远不变。**但是有些常量在执行之前就已知了（比如红色的十六进制值），还有些在执行期间被“计算”出来，但初始赋值之后就不会改变**。
-
-例如：
-```js
-const pageLoadTime = /* 网页加载所需的时间 */;
-```
-**`pageLoadTime` 的值在页面加载之前是未知的，所以采用常规命名。但是它仍然是个常量，因为赋值之后不会改变。**
-
-换句话说，**大写命名的常量仅用作“硬编码（hard-coded）”值的别名**。**当值在执行之前或在被写入代码的时候，我们就知道值是什么了**。</pre>
-</div>
-<div created="20210207095211286" modified="20210207100445785" tags="JavaScript javascript.info" title="常用的类型转换:转换为 string 类型、转换为 number 类型和转换为 boolean 类型" type="text/x-markdown">
-<pre>字符串转换 
-- 转换发生在输出内容的时候
-- 或通过 String(value) 进行显式转换。
-
-数字型转换
-- 转换发生在进行算术操作时
-- 或通过 Number(value) 进行显式转换
-- 规则：
- - Number(undefined);// NaN
- - Number(null);// 0
- - Number(true);// 1
- - Number(false);// 0
- - Number(str);// 原样读取str字符串，忽略两端空白，空字符串转换为0，出错则为NaN
-
-布尔型转换
-- 转换发生在进行逻辑操作时
-- 可以通过 Boolean(value) 进行显式转换
-- Boolean(0);//false
-- Boolean(null);//false
-- Boolean(undefined);//false
-- Boolean(NaN);//false
-- Boolean(&quot;&quot;);//false
-- Boolean(&quot; &quot;);//true
-- Boolean(&quot;0&quot;);//true
-
-
-</pre>
-</div>
-<div created="20210207093132514" modified="20210207094935531" tags="JavaScript javascript.info" title="数据类型" type="text/x-markdown">
-<pre>在 JavaScript 中有 8 种基本的数据类型（译注：**7 种原始类型(基本数据类型)和 1 种引用类型(复杂数据类型)**）
-- `number`
-- `bigint`
-- `string`
-- `boolean`
-- `null`
-- `undefined`
-- `symbol`
-- `object`
-
-可以通过 `typeof` 运算符查看存储在变量中的数据类型
-
-- 两种形式：`typeof x` 或者 `typeof(x)`
-- 以字符串的形式返回类型名称，例如 `&quot;string&quot;`
-- `typeof null` 会返回 `&quot;object&quot;` —— 这是 JavaScript 编程语言的一个错误，实际上它并不是一个 object
-- `typeof alert` 的结果是 `&quot;function&quot;`。在 JavaScript 语言中没有一个特别的 `“function”` 类型。函数隶属于 object 类型。但是 `typeof` 会对函数区分对待，并返回 `&quot;function&quot;`。这也是来自于 JavaScript 语言早期的问题。*从技术上讲，这种行为是不正确的，但在实际编程中却非常方便。*
-
-
-</pre>
-</div>
-<div created="20210207090950540" modified="20210207091554770" tags="javascript.info JavaScript" title="现代模式，&quot;use strict&quot;" type="text/x-markdown">
-<pre>长久以来，JavaScript 不断向前发展且并未带来任何兼容性问题。新的特性被加入，旧的功能也没有改变。这么做有利于兼容旧代码，但缺点是 JavaScript 创造者的任何错误或不完善的决定也将永远被保留在 JavaScript 语言中。
-
-这种情况一直持续到 2009 年 ECMAScript 5 (ES5) 的出现。ES5 规范增加了新的语言特性并且修改了一些已经存在的特性。为了保证旧的功能能够使用，大部分的修改是默认不生效的。你需要一个特殊的指令 —— &quot;use strict&quot; 来明确地激活这些特性。
-
-
-- 脚本文件的顶部
-- 函数体的开头
-- “classes” 和 “modules”自动启用`'use strict'`
-
----
-
-- 没有办法取消 `'use strict'`
-
-- console控制台`'use strict'; &lt;Shift+Enter 换行&gt;`</pre>
-</div>
-<div created="20210209065006167" modified="20210209070903168" tags="JavaScript javascript.info" title="空值合并运算符（nullish coalescing operator） ??" type="text/x-markdown">
-<pre>将值既不是 null 也不是 undefined 的表达式**定义为**“已定义的（defined）。
-
-a ?? b 的结果是：
-
-- 如果 a 是已定义的，则结果为 a，
-- 如果 a 不是已定义的，则结果为 b。
-
-换句话说，如果第一个参数不是 null/undefined，则 ?? 返回第一个参数。否则，返回第二个参数
-
-```js
-result = a ?? b
-
-// 等价于
-
-result = (a !== null &amp;&amp; a !== undefined) ? a : b;
-
-```
-
-场景：
-
-```js
-
-// 1. 为可能是未定义的变量提供一个默认值
-
-let user;
-
-alert(user ?? &quot;Anonymous&quot;); // Anonymous
-
-// 2. 可以使用 ?? 序列从一系列的值中选择出第一个非 null/undefined 的值
-
-let firstName = null;
-let lastName = null;
-let nickName = &quot;Supercoder&quot;;
-
-// 显示第一个已定义的值：
-alert(firstName ?? lastName ?? nickName ?? &quot;Anonymous&quot;); // Supercoder
-
-```
-
-**|| 和 ??之间重要的区别是**：
-
--    || 返回第一个 真 值
--   ?? 返回第一个 已定义的 值
-</pre>
-</div>
-<div created="20210202030629251" modified="20210202095248411" tags="Algorithms Data-Structure JavaScript" title="算法与数据结构" type="text/x-markdown">
-<pre>https://github.com/trekhleb/javascript-algorithms
-
-https://visualgo.net/en
-
-https://github.com/CoderMJLee/BinaryTrees</pre>
-</div>
-<div created="20210207101342161" modified="20210207101646048" tags="JavaScript javascript.info" title="自增/自减" type="text/x-markdown">
-<pre>**所有的运算符都有返回值**，自增/自减也不例外
-- 前置形式返回一个新的值
-- 后置返回原来的值（做加法/减法之前的值）</pre>
-</div>
-<div created="20210207101829653" modified="20210207102024265" tags="JavaScript javascript.info" title="赋值 `=` 返回一个值" type="text/x-markdown">
-<pre>在 JavaScript 中，大多数运算符都会返回一个值。这对于 + 和 - 来说是显而易见的，但对于 = 来说也是如此。
-
-**语句 x = value 将值 value 写入 x 然后返回 x。**
-
-```js
-let a = 1;
-let b = 2;
-
-let c = 3 - (a = b + 1);
-
-alert( a ); // 3
-alert( c ); // 0
-```
-上面这个例子，(a = b + 1) 的结果是赋给 a 的值（也就是 3）。然后该值被用于进一步的运算。
-
-有时我们会在 JavaScript 库中看到它。不过，请不要写这样的代码。这样的技巧绝对不会使代码变得更清晰或可读。
-</pre>
-</div>
-<div created="20210209062700965" modified="20210209064839639" tags="JavaScript javascript.info" title="逻辑 与 运算符" type="text/x-markdown">
-<pre>**与运算返回第一个假值，如果没有假值就返回最后一个值**，返回的值是操作数的初始形式，**不会做布尔转换**。
-
-1. **获取变量列表或者表达式中的第一个假值。**
-
-```js
-    alert( 1 &amp;&amp; 2 &amp;&amp; null &amp;&amp; 3 ); // null
-```
-
-2. **短路求值（Short-circuit evaluation）:如果所有的值都是真值，最后一个值将会被返回**
-
-```js
-    alert( 1 &amp;&amp; 2 &amp;&amp; 3 ); // 3，最后一个值
-```
-
-与运算 &amp;&amp; 的优先级比或运算 || 要高</pre>
-</div>
-<div created="20210209060624703" modified="20210209064858783" tags="JavaScript javascript.info" title="逻辑 或 运算符" type="text/x-markdown">
-<pre>**一个或运算 || 的链，将返回第一个真值，如果不存在真值，就返回该链的最后一个值。** 返回的值是操作数的初始形式，**不会做布尔转换**。与“纯粹的、传统的、仅仅处理布尔值的或运算”相比，这个规则就引起了一些很有趣的用法：
-
-1. **获取变量列表或者表达式中的第一个真值**
-
-    ```js
-        // 例如，我们有变量 firstName、lastName 和 nickName，都是可选的（即可以是 undefined，也可以是假值）。
-
-        // 我们用或运算 || 来选择有数据的那一个，并显示出来（如果没有设置，则用 &quot;Anonymous&quot;）：
-
-        let firstName = &quot;&quot;;
-        let lastName = &quot;&quot;;
-        let nickName = &quot;SuperCoder&quot;;
-
-        alert( firstName || lastName || nickName || &quot;Anonymous&quot;); // SuperCoder
-
-        // 如果所有变量的值都为假，结果就是 &quot;Anonymous&quot;。
-    ```
-2. **短路求值（Short-circuit evaluation）**
-   ```js
-        // 或运算符 || 的另一个用途是所谓的“短路求值”。
-
-        // 这指的是，|| 对其参数进行处理，直到达到第一个真值，然后立即返回该值，而无需处理其他参数。
-
-        //如果操作数不仅仅是一个值，而是一个有副作用的表达式，例如变量赋值或函数调用，那么这一特性的重要性就变得显而易见了。
-
-        //在下面这个例子中，只会打印第二条信息：
-
-        true || alert(&quot;not printed&quot;);
-        false || alert(&quot;printed&quot;);
-
-        // 在第一行中，或运算符 || 在遇到 true 时立即停止运算，所以 alert 没有运行。
-
-        // 有时，人们利用这个特性，只在左侧的条件为假时才执行命令。
-   ```</pre>
-</div>
-<div created="20210209063739330" modified="20210209063900143" tags="JavaScript javascript.info" title="逻辑 非 运算符" type="text/x-markdown">
-<pre>逻辑非运算符接受一个参数，并按如下运作：
-
-- 将操作数转化为布尔类型：true/false。
-- **返回相反的值。**
-
-
-**两个非运算 !! 有时候用来将某个值转化为布尔类型**</pre>
-</div>
-<div created="20210219101110697" modified="20210219101241011" tags="LeetCode Algorithms Data-Structure CodeSnippets" title="链表的后半部分(中间节点)" type="text/x-markdown">
-<pre>```js
-function middleNodeOptmization(head) {
-    let slow = fast = head;
-
-    while (fast.next !== null &amp;&amp; fast.next.next !== null) {
-        slow = slow.next
-        fast = fast.next.next
-    }
-
-    return slow;
-}
-
-```</pre>
-</div>
-<div created="20210209025721707" modified="20210209065937195" tags="TypeScript" title="非空断言（non-null-assertion-operator）！" type="text/x-markdown">
-<pre>[https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator)
-
-非空断言，排除前面为null和undefined的情况，简直和 ?? 一模一样 :cold_sweat: </pre>
 </div>
 
 
