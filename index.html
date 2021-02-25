@@ -371,6 +371,8 @@ Error message and password prompt
 
 <li>前端进阶之路</li>
 
+<li>反转整数的方法类比反转字符串</li>
+
 <li>反转链表</li>
 
 <li>同事就是同事，不是朋友</li>
@@ -15004,7 +15006,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210225075447267" list="同时从头/从尾遍历数组 next-theme博客园主题 [[The Import On Interaction Pattern]] [[The 5 Types Of React Application State]] https://codersblock.com/ [[Use CSS Variables instead of React Context]] [[Diving into the ::before and ::after Pseudo-Elements]] Knowledge-Bases" modified="20210225075453740" title="$:/StoryList">
+<div created="20210225152119707" list="反转整数的方法类比反转字符串 同时从头/从尾遍历数组 删除链表中的节点 Knowledge-Bases" modified="20210225152127181" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -15023,7 +15025,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210225070616423&quot;
+            &quot;text&quot;: &quot;20210225144936347&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -15059,15 +15061,15 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1280&quot;
+            &quot;text&quot;: &quot;1536&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;720&quot;
+            &quot;text&quot;: &quot;864&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
-            &quot;text&quot;: &quot;en&quot;
+            &quot;text&quot;: &quot;en-US&quot;
         }
     }
 }</pre>
@@ -16069,6 +16071,25 @@ var constructMaximum = function(nums) {
 
 
 </pre>
+</div>
+<div created="20210225152041566" modified="20210225152253935" tags="CodeSnippets Array" title="反转整数的方法类比反转字符串">
+<pre>反转整数的方法可以与反转字符串进行类比。
+
+我们想重复“弹出” xx 的最后一位数字，并将它“推入”到 rev 的后面。最后，rev 将与 xx 相反。
+
+要在没有辅助堆栈 / 数组的帮助下 “弹出” 和 “推入” 数字，我们可以使用数学方法。
+
+```js
+//pop operation:
+pop = x % 10;
+x /= 10;
+
+//push operation:
+temp = rev * 10 + pop;
+rev = temp;
+```
+
+https://leetcode-cn.com/problems/reverse-integer/solution/zheng-shu-fan-zhuan-by-leetcode/</pre>
 </div>
 <div created="20210219061319640" modified="20210219061625595" tags="LinkedList Algorithms Data-Structure CodeSnippets LeetCode" title="反转链表" type="text/x-markdown">
 <pre>方法一，头插法
