@@ -167,6 +167,8 @@ Error message and password prompt
 
 <li>$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/markdown</li>
 
+<li>$:/config/RelinkOnRename</li>
+
 <li>$:/core</li>
 
 <li>$:/DefaultTiddlers</li>
@@ -391,7 +393,7 @@ Error message and password prompt
 
 <li>数据类型</li>
 
-<li>方括号，访问属性的灵活性</li>
+<li>方括号访问属性的灵活性</li>
 
 <li>现代模式，&quot;use strict&quot;</li>
 
@@ -400,6 +402,8 @@ Error message and password prompt
 <li>算法与数据结构</li>
 
 <li>自增/自减</li>
+
+<li>计算属性 &amp;&amp; 方括号访问属性</li>
 
 <li>赋值 `=` 返回一个值</li>
 
@@ -465,6 +469,9 @@ Error message and password prompt
 </div>
 <div created="20210223093341877" modified="20210224042441830" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/markdown">
 <pre>no</pre>
+</div>
+<div created="20210226030126831" modified="20210226030126831" title="$:/config/RelinkOnRename">
+<pre>yes</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" name="Core" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.23-prerelease">
 <pre>{
@@ -15010,7 +15017,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210226020155250" list="方括号，访问属性的灵活性 尾随（trailing）或悬挂（hanging）逗号" modified="20210226020229800" title="$:/StoryList">
+<div created="20210226020155250" list="[[计算属性 &amp;&amp; 方括号访问属性]] 方括号访问属性的灵活性 尾随（trailing）或悬挂（hanging）逗号" modified="20210226020229800" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -16297,7 +16304,7 @@ let user = {
 
 </pre>
 </div>
-<div created="20210226023140797" modified="20210226023944648" tags="javascript.info Object JavaScript" title="方括号，访问属性的灵活性">
+<div created="20210226023140797" modified="20210226030132119" tags="javascript.info Object JavaScript" title="方括号访问属性的灵活性">
 <pre>对于多词属性，点操作就不能用了：
 
 ```js
@@ -16447,6 +16454,31 @@ https://github.com/CoderMJLee/BinaryTrees</pre>
 <pre>**所有的运算符都有返回值**，自增/自减也不例外
 - 前置形式返回一个新的值
 - 后置返回原来的值（做加法/减法之前的值）</pre>
+</div>
+<div created="20210226025840016" modified="20210226030132125" tags="JavaScript javascript.info Object" title="计算属性 &amp;&amp; 方括号访问属性">
+<pre>在对象字面量中，使用方括号
+
+```js
+let fruit = prompt(&quot;Which fruit to buy?&quot;, &quot;apple&quot;);
+
+let bag = {
+  [fruit]: 5, // 属性名是从 fruit 变量中得到的
+};
+
+alert( bag.apple ); // 5 如果 fruit=&quot;apple&quot;
+```
+
+本质上，这跟下面的语法效果相同：
+
+```js
+let fruit = prompt(&quot;Which fruit to buy?&quot;, &quot;apple&quot;);
+let bag = {};
+
+// 从 fruit 变量中获取值
+bag[fruit] = 5;
+```
+---
+[[方括号访问属性的灵活性]]</pre>
 </div>
 <div created="20210207101829653" modified="20210207102024265" tags="JavaScript javascript.info" title="赋值 `=` 返回一个值" type="text/x-markdown">
 <pre>在 JavaScript 中，大多数运算符都会返回一个值。这对于 + 和 - 来说是显而易见的，但对于 = 来说也是如此。
