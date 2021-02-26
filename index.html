@@ -389,6 +389,8 @@ Error message and password prompt
 
 <li>尾随（trailing）或悬挂（hanging）逗号</li>
 
+<li>属性命名没有限制</li>
+
 <li>常用的类型转换:转换为 string 类型、转换为 number 类型和转换为 boolean 类型</li>
 
 <li>数据类型</li>
@@ -15017,7 +15019,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210226020155250" list="[[计算属性 &amp;&amp; 方括号访问属性]] 方括号访问属性的灵活性 尾随（trailing）或悬挂（hanging）逗号" modified="20210226020229800" title="$:/StoryList">
+<div created="20210226020155250" list="属性命名没有限制 [[计算属性 &amp;&amp; 方括号访问属性]] 方括号访问属性的灵活性 尾随（trailing）或悬挂（hanging）逗号" modified="20210226020229800" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -16253,6 +16255,39 @@ let user = {
 ```
 
 这叫做尾随（trailing）或悬挂（hanging）逗号。这样便于我们添加、删除和移动属性，因为所有的行都是相似的。</pre>
+</div>
+<div created="20210226031152034" modified="20210226031541892" tags="JavaScript javascript.info Object" title="属性命名没有限制">
+<pre>
+变量名不能是编程语言的某个保留字，如 “for”、“let”、“return” 等……
+
+但''对象的属性名并不受此限制''：
+
+```js
+// 这些属性都没问题
+let obj = {
+  for: 1,
+  let: 2,
+  return: 3
+};
+
+alert( obj.for + obj.let + obj.return );  // 6
+```
+
+简而言之，属性命名没有限制。
+
+''属性名可以是任何字符串或者 symbol（一种特殊的标志符类型，将在后面介绍）''。
+
+''其他类型会被自动地转换为字符串''。
+
+陷阱：
+
+名为 `__proto__ `的属性。我们不能将它设置为一个''非对象''的值：
+
+```js
+let obj = {};
+obj.__proto__ = 5; // 分配一个数字
+alert(obj.__proto__); // [object Object] — 值为对象，与预期结果不同
+```</pre>
 </div>
 <div created="20210207095211286" modified="20210207100445785" tags="JavaScript javascript.info" title="常用的类型转换:转换为 string 类型、转换为 number 类型和转换为 boolean 类型" type="text/x-markdown">
 <pre>字符串转换 
