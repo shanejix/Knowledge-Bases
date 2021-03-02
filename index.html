@@ -275,6 +275,8 @@ Error message and password prompt
 
 <li>303. 区域和检索 - 数组不可变⭐⭐</li>
 
+<li>304. 二维区域和检索 - 矩阵不可变</li>
+
 <li>50-developer-tools-to-make-your-life-a-little-easier-4oc5</li>
 
 <li>53. 最大子序和⭐⭐⭐</li>
@@ -15041,7 +15043,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210302053452820" list="[[53. 最大子序和⭐⭐⭐]] [[155. 最小栈]] [[303. 区域和检索 - 数组不可变⭐⭐]] Knowledge-Bases" modified="20210302054603935" title="$:/StoryList">
+<div list="[[304. 二维区域和检索 - 矩阵不可变]] Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -15060,7 +15062,7 @@ Error message and password prompt
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210302012853958&quot;
+            &quot;text&quot;: &quot;20210302122520182&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -15096,15 +15098,15 @@ Error message and password prompt
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1280&quot;
+            &quot;text&quot;: &quot;1536&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;720&quot;
+            &quot;text&quot;: &quot;864&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
-            &quot;text&quot;: &quot;en&quot;
+            &quot;text&quot;: &quot;en-US&quot;
         }
     }
 }</pre>
@@ -15569,6 +15571,66 @@ https://leetcode-cn.com/problems/sliding-window-maximum/solution/hua-dong-chuang
 ---
 https://leetcode-cn.com/problems/range-sum-query-immutable/solution/qu-yu-he-jian-suo-shu-zu-bu-ke-bian-by-l-px41/
 </pre>
+</div>
+<div created="20210302122525383" modified="20210302123041664" tags="LeetCode" title="304. 二维区域和检索 - 矩阵不可变">
+<pre>
+方法一：暴力循环
+
+方法二：预处理+按行求二维前缀和（在一维前缀和的基础上）[[https://leetcode-cn.com/problems/range-sum-query-immutable/]]
+
+''注意一维前缀求和的技巧''
+
+```js
+//  方法二：预处理+按行求二维前缀和（在一维前缀和的基础上）
+
+/**
+ * @param {number[][]} matrix
+ */
+var NumMatrix = function (matrix) {
+    let row = matrix.length;
+
+    if (row) {
+        const col = matrix[0].length;
+        // col+1 为求和考虑
+        this.sums = new Array(row).fill(0).map(() =&gt; new Array(col + 1).fill(0));
+
+        for (let i = 0; i &lt; row; i++) {
+            for (let j = 0; j &lt; col; j++) {
+                // [0,x] =&gt; 0 到x-1的和 
+                this.sums[i][j + 1] = this.sums[i][j] + matrix[i][j]
+            }
+        }
+    }
+};
+
+/** 
+ * @param {number} row1 
+ * @param {number} col1 
+ * @param {number} row2 
+ * @param {number} col2
+ * @return {number}
+ */
+NumMatrix.prototype.sumRegion = function (row1, col1, row2, col2) {
+    let sum = 0;
+    for (let i = row1; i &lt;= row2; i++) {
+        sum += this.sums[i][col2 + 1] - this.sums[i][col1]
+    }
+
+    return sum
+};
+
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * var obj = new NumMatrix(matrix)
+ * var param_1 = obj.sumRegion(row1,col1,row2,col2)
+ */
+```
+
+方法三：思路确实很强-有点类似动态规划的感觉
+
+---
+
+https://leetcode-cn.com/problems/range-sum-query-2d-immutable/solution/er-wei-qu-yu-he-jian-suo-ju-zhen-bu-ke-b-2z5n/</pre>
 </div>
 <div created="20210202030531634" modified="20210220022218497" tags="Tools Articles" title="50-developer-tools-to-make-your-life-a-little-easier-4oc5" type="text/x-markdown">
 <pre>[https://dev.to/iainfreestone/50-developer-tools-to-make-your-life-a-little-easier-4oc5](https://dev.to/iainfreestone/50-developer-tools-to-make-your-life-a-little-easier-4oc5)</pre>
