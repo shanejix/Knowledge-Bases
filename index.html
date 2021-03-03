@@ -277,6 +277,8 @@ Error message and password prompt
 
 <li>304. 二维区域和检索 - 矩阵不可变</li>
 
+<li>338. 比特位计数⭐⭐⭐</li>
+
 <li>50-developer-tools-to-make-your-life-a-little-easier-4oc5</li>
 
 <li>53. 最大子序和⭐⭐⭐</li>
@@ -15049,7 +15051,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210303112923712" list="i&amp;1 x&amp;(x−1) Knowledge-Bases" modified="20210303112923712" title="$:/StoryList">
+<div created="20210303112923712" list="[[338. 比特位计数⭐⭐⭐]] i&amp;1 x&amp;(x−1) Knowledge-Bases" modified="20210303112923712" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -15636,6 +15638,200 @@ NumMatrix.prototype.sumRegion = function (row1, col1, row2, col2) {
 ---
 
 https://leetcode-cn.com/problems/range-sum-query-2d-immutable/solution/er-wei-qu-yu-he-jian-suo-ju-zhen-bu-ke-b-2z5n/</pre>
+</div>
+<div created="20210303115128274" modified="20210303115631854" tags="DynamicProgramming LeetCode" title="338. 比特位计数⭐⭐⭐">
+<pre>''暴力循环-&gt;递归-&gt;递归-记忆化存储-&gt;动态规划 逐步优化''
+
+```js
+
+// Given a non negative integer number num.For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
+
+// Example 1:
+
+// Input: 2
+// Output: [0, 1, 1]
+// Example 2:
+
+// Input: 5
+// Output: [0, 1, 1, 2, 1, 2]
+// Follow up:
+
+// It is very easy to come up with a solution with run time O(n * sizeof(integer)).But can you do it in linear time O(n) / possibly in a single pass ?
+//     Space complexity should be O(n).
+// Can you do it like a boss ? Do it without using any builtin function like __builtin_popcount in c++ or in any other language.
+
+// 方法一：暴力循环
+
+/**
+ * @param {number} num
+ * @return {number[]}
+ */
+var countBits = function (num) {
+    let res = [];
+
+    for (let i = 0; i &lt;= num; i++) {
+        res.push(getSum(i));
+    }
+
+    return res;
+};
+
+function getSum(num) {
+    let sum = 0;
+
+    while (num) {
+        if (num % 2 === 1) {
+            sum += num % 2;
+        }
+        num = parseInt(num / 2);
+    }
+
+    return sum;
+}
+
+
+// 方法一：暴力循环-位运算优化
+
+/**
+ * @param {number} num
+ * @return {number[]}
+ */
+var countBits = function (num) {
+    const bits = new Array(num + 1).fill(0);
+    for (let i = 0; i &lt;= num; i++) {
+        bits[i] = countOnes(i);
+    }
+    return bits
+};
+
+function countOnes(num) {
+    if (num === 0) {
+        return 0;
+    }
+
+    if (num &amp; 1) {
+        return countOnes(num - 1) + 1;
+    } else {
+        return countOnes(num &gt;&gt; 1)
+    }
+}
+
+// 方法二: 递归
+
+/**
+ * @param {number} num
+ * @return {number[]}
+ */
+var countBits = function (num) {
+    let ones = new Array(num + 1).fill(0);
+
+    for (let i = 0; i &lt;= num; i++) {
+        ones[i] = countOnes(i);
+    }
+
+    return ones;
+
+};
+
+function countOnes(num) {
+    if (num === 0) {
+        return 0;
+    }
+
+    if (num &amp; 1) {
+        return countOnes(num - 1) + 1;
+    } else {
+        return countOnes(num &gt;&gt; 1)
+    }
+}
+
+// 方法三：递归 - 记忆化存储
+
+/**
+ * @param {number} num
+ * @return {number[]}
+ */
+var countBits = function (num) {
+    let ones = new Array(num + 1).fill(0);
+    let memo = new Array(num + 1).fill(0);
+
+    for (let i = 0; i &lt;= num; i++) {
+        ones[i] = countOnes(i, memo);
+    }
+
+    return ones;
+
+};
+
+function countOnes(num, memo) {
+
+    if (memo[num] !== 0) {
+        return memo[num];
+    }
+
+    if (num === 0) {
+        return 0;
+    }
+
+    if (num &amp; 1) {
+        memo[num] = countOnes(num - 1, memo) + 1;
+    } else {
+        memo[num] = countOnes(num &gt;&gt; 1, memo)
+    }
+
+    return memo[num]
+}
+
+function countOnes(x) {
+    let sum = 0;
+
+    while (x) {
+        // x= x&amp;(x-1);
+        x &amp;= (x - 1);
+        sum++
+    }
+
+    return sum
+}
+
+// 方法四：动态规划 - 低位有效
+
+/**
+ * @param {number} num
+ * @return {number[]}
+ */
+var countBits = function (num) {
+    let ones = new Array(num + 1).fill(0);
+
+    for (let i = 0; i &lt;= num; i++) {
+        if (i === 0) {
+            ones[0] = 0;
+        } else if (i % 2 === 0) {
+            ones[i] = ones[i / 2];
+        } else {
+            ones[i] = ones[parseInt(i / 2)] + 1;
+        }
+    }
+
+    return ones;
+
+};
+
+// 方法四：动态规划 - 低位有效- 优化
+
+/**
+ * @param {number} num
+ * @return {number[]}
+ */
+var countBits = function (num) {
+    const bits = new Array(num + 1).fill(0);
+    for (let i = 1; i &lt;= num; i++) {
+        bits[i] = bits[i &gt;&gt; 1] + (i &amp; 1);
+    }
+    return bits;
+};
+
+```</pre>
 </div>
 <div created="20210202030531634" modified="20210220022218497" tags="Tools Articles" title="50-developer-tools-to-make-your-life-a-little-easier-4oc5" type="text/x-markdown">
 <pre>[https://dev.to/iainfreestone/50-developer-tools-to-make-your-life-a-little-easier-4oc5](https://dev.to/iainfreestone/50-developer-tools-to-make-your-life-a-little-easier-4oc5)</pre>
