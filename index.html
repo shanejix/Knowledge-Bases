@@ -435,6 +435,8 @@ Error message and password prompt
 
 <li>数据类型</li>
 
+<li>数组区间遍历</li>
+
 <li>方括号访问属性的灵活性</li>
 
 <li>现代模式，&quot;use strict&quot;</li>
@@ -15122,7 +15124,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210304125543765" list="[[303. 区域和检索 - 数组不可变⭐⭐]] 0001.TwoSum [[53. 最大子序和⭐⭐⭐]] [[304. 二维区域和检索 - 矩阵不可变]] [[338. 比特位计数⭐⭐⭐]] [[5. 最长回文子串⭐⭐⭐]] [[354. 俄罗斯套娃信封问题⭐⭐⭐]] [[300. 最长递增子序列]] Knowledge-Bases" modified="20210304130137012" title="$:/StoryList">
+<div created="20210304125543765" list="数组区间遍历 [[303. 区域和检索 - 数组不可变⭐⭐]] 0001.TwoSum [[53. 最大子序和⭐⭐⭐]] [[304. 二维区域和检索 - 矩阵不可变]] [[338. 比特位计数⭐⭐⭐]] [[5. 最长回文子串⭐⭐⭐]] [[354. 俄罗斯套娃信封问题⭐⭐⭐]] [[300. 最长递增子序列]] Knowledge-Bases" modified="20210304130137012" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -16920,6 +16922,20 @@ alert(obj.__proto__); // [object Object] — 值为对象，与预期结果不�
 
 
 </pre>
+</div>
+<div created="20210304131155431" modified="20210304131532551" tags="LeetCode CodeSnippets" title="数组区间遍历">
+<pre>
+''所有`[i,j]`区间''; `l为length`
+
+```js
+ for (let l = 0; l &lt; s.length; l++) {
+
+        for (let i = 0; i + l &lt; s.length; i++) {
+            // dp[i][j]
+            ...
+        }
+}
+```</pre>
 </div>
 <div created="20210226023140797" modified="20210226030132119" tags="javascript.info Object JavaScript" title="方括号访问属性的灵活性">
 <pre>对于多词属性，点操作就不能用了：
