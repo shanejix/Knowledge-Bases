@@ -141,6 +141,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>&quot;new&quot; 操作符</li>
+
 <li>$:/config/AutoSave</li>
 
 <li>$:/config/DefaultSidebarTab</li>
@@ -479,6 +481,27 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20210305052952217" modified="20210305053335179" tags="JavaScript javascript.info" title="&quot;new&quot; 操作符">
+<pre>当一个函数被使用 new 操作符执行时，它按照以下步骤：
+
+# 一个新的空对象被创建并分配给 this
+# 函数体执行。通常它会修改 this，为其添加新的属性
+# 返回 this 的值
+
+换句话说，`new User(...)` 做的就是类似的事情：
+
+```js
+function User(name) {
+  // this = {};（隐式创建）
+
+  // 添加属性到 this
+  this.name = name;
+  this.isAdmin = false;
+
+  // return this;（隐式返回）
+}
+```</pre>
+</div>
 <div created="20210202030853882" modified="20210202030853882" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
@@ -15128,7 +15151,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="this 面向对象编程 Knowledge-Bases" title="$:/StoryList">
+<div list="[[&quot;new&quot; 操作符]] this 面向对象编程 Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
