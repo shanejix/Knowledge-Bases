@@ -245,6 +245,10 @@ Error message and password prompt
 
 <li>$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary</li>
 
+<li>$:/temp/search</li>
+
+<li>$:/temp/search/input</li>
+
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
@@ -271,7 +275,11 @@ Error message and password prompt
 
 <li>0160.IntersectionofTwoLinkedLists-opimization</li>
 
+<li>141. 环形链表</li>
+
 <li>155. 最小栈</li>
+
+<li>202. 快乐数⭐</li>
 
 <li>239. 滑动窗口最大值 &amp;&amp; 155. 最小栈</li>
 
@@ -15203,7 +15211,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="Symbol ?.可选链 new.target new操作符 this 面向对象编程 Knowledge-Bases" title="$:/StoryList">
+<div created="20210305134454258" list="[[202. 快乐数⭐]] [[141. 环形链表]] Knowledge-Bases" modified="20210305134458788" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -15222,7 +15230,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210305013902640&quot;
+            &quot;text&quot;: &quot;20210305133929720&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -15258,15 +15266,15 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1280&quot;
+            &quot;text&quot;: &quot;1536&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;720&quot;
+            &quot;text&quot;: &quot;864&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
-            &quot;text&quot;: &quot;en&quot;
+            &quot;text&quot;: &quot;en-US&quot;
         }
     }
 }</pre>
@@ -15279,6 +15287,12 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 </div>
 <div created="20210201124631412" modified="20210201124958609" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre>mark</pre>
+</div>
+<div created="20210305134145692" modified="20210305134149517" title="$:/temp/search">
+<pre>环形链表</pre>
+</div>
+<div created="20210305134145697" modified="20210305134149520" title="$:/temp/search/input">
+<pre>环形链表</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23-prerelease">
 <pre>{
@@ -15624,6 +15638,16 @@ var getIntersectionNodeOpitmization = function (headA, headB) {
 };
 ```</pre>
 </div>
+<div created="20210305134151067" modified="20210305134345207" tags="LeetCode HashTable" title="141. 环形链表">
+<pre>
+方法一：哈希table
+
+方法二：快慢指针
+
+---
+
+https://leetcode-cn.com/problems/linked-list-cycle/</pre>
+</div>
 <div created="20210222141016545" modified="20210222145054868" tags="LeetCode" title="155. 最小栈" type="text/vnd.tiddlywiki">
 <pre>---
 
@@ -15699,6 +15723,14 @@ var getIntersectionNodeOpitmization = function (headA, headB) {
 [[239. 滑动窗口最大值 &amp;&amp; 155. 最小栈]]
 
 https://leetcode-cn.com/problems/min-stack/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-38/</pre>
+</div>
+<div created="20210305133934215" modified="20210305134508912" tags="LeetCode HashTable" title="202. 快乐数⭐">
+<pre>
+关键问题时解决有无环的问题
+
+简直就是 [[141. 环形链表]]的孪生姊妹
+
+</pre>
 </div>
 <div created="20210221154108774" modified="20210221154556527" tags="LeetCode" title="239. 滑动窗口最大值 &amp;&amp; 155. 最小栈" type="text/x-markdown">
 <pre>*155. 最小栈* 中 **双栈法** 和 *239. 滑动窗口最大值* 中 **单调队列法** 有异曲同工之妙 - **空间换时间**</pre>
@@ -16311,8 +16343,7 @@ view my wiki [shanejix's wiki](https://wiki.shanejix.vercel.app/).
 </pre>
 </div>
 <div created="20210305072700350" modified="20210305074437672" tags="JavaScript javascript.info" title="new.target">
-<pre>
-在一个函数内部，可以使用 new.target 属性来检查/判断该函数是被通过 new 调用的“构造器模式”，还是没被通过 new 调用的“常规模式”。
+<pre>在一个函数内部，可以使用 new.target 属性来检查/判断该函数是被通过 new 调用的“构造器模式”，还是没被通过 new 调用的“常规模式”。
 
 ```js
 function User() {
