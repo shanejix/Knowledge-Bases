@@ -363,6 +363,8 @@ Error message and password prompt
 
 <li>switch 类型很关键</li>
 
+<li>Symbol</li>
+
 <li>Tao of React - Software Design, Architecture &amp; Best Practices</li>
 
 <li>The 5 Types Of React Application State</li>
@@ -485,8 +487,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div created="20210305080608508" modified="20210305082248082" tags="JavaScript javascript.info" title="?.可选链">
-<pre>!! `不存在的属性”的问题`:
+<div created="20210305080608508" modified="20210305090137951" tags="JavaScript javascript.info" title="?.可选链">
+<pre>!! `不存在的属性”的问题`
 
 ```js
 // 获取 user.address.street，而该用户恰好没提供地址信息，会收到一个错误：
@@ -529,11 +531,11 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 
 但仍然不够优雅。
 
-!! `可选链`:
+!! `可选链`
 
 ''如果可选链 ?. 前面的部分是 undefined 或者 null，它会停止运算并返回该部分''
 
-''`不要过度使用可选链`'':
+''`不要过度使用可选链`''
 
 
 
@@ -544,11 +546,11 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 所以，如果 user 恰巧因为失误变为 undefined，我们会看到一个编程错误并修复它。否则，代码中的错误在不恰当的地方被消除了，这会导致调试更加困难。
 
 
-!! `短路效应`:
+!! `短路效应`
 
 如果 ?. 左边部分不存在，就会立即停止运算（“短路效应”）
 
-!! `其它变体：?.()，?.[]`:
+!! `其它变体：?.()，?.[]`
 
 可选链 ?. 不是一个运算符，而是一个特殊的语法结构。它还可以与函数和方括号一起使用</pre>
 </div>
@@ -15201,7 +15203,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="?.可选链 new.target new操作符 this 面向对象编程 Knowledge-Bases" title="$:/StoryList">
+<div list="Symbol ?.可选链 new.target new操作符 this 面向对象编程 Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -16452,6 +16454,122 @@ switch (arg) {
 }
 ```
 输入 3，因为 prompt 的结果是字符串类型的 &quot;3&quot;，不严格相等 === 于数字类型的 3，所以 case 3 不会执行！因此 case 3 部分是一段无效代码。所以会执行 default 分支。</pre>
+</div>
+<div created="20210305084634583" modified="20210305092159303" tags="JavaScript javascript.info" title="Symbol">
+<pre>!! `Symbol`
+
+''&quot;Symbol” 值表示唯一的标识符''
+
+```js
+
+// id1 id2 是 symbol 的一个实例化对象, 描述都为&quot;id&quot;
+let id1 = Symbol(&quot;id&quot;);
+let id2 = Symbol(&quot;id&quot;);
+
+// 描述相同的 Symbol —— 它们不相等
+alert(id1 == id2); // false
+
+alert(id1); // 类型错误：无法将 Symbol 值自动转换为字符串。
+
+alert(id1.toString()); // 通过 toString 显示转化，现在它有效了
+
+alert(id.description);// 或者获取 symbol.description 属性，只显示描述（description）
+
+```
+!! `“隐藏”属性`
+
+''Symbol 允许我们创建对象的“隐藏”属性，代码的任何其他部分都不能意外访问或重写这些属性''。
+
+例如，''如果我们使用的是属于第三方代码的 user 对象，我们想要给它们添加一些标识符''。
+
+```js
+// 属于另一个代码
+let user = { 
+  name: &quot;John&quot;
+};
+
+// 使用 Symbol(&quot;id&quot;) 作为键
+let id = Symbol(&quot;id&quot;);
+
+user[id] = 1;
+
+// 使用 Symbol 作为键来访问数据
+alert( user[id] ); 
+```
+`使用 Symbol(&quot;id&quot;) 作为键，比起用字符串 &quot;id&quot; 来有什么好处呢`？
+
+因为 user 对象属于其他的代码，那些代码也会使用这个对象，所以我们不应该在它上面直接添加任何字段，这样很不安全。但是你添加的 Symbol 属性不会被意外访问到，''第三方代码根本不会看到它''，所以使用 Symbol 基本上不会有问题。
+
+另外，假设另一个脚本希望在 user 中有自己的标识符，以实现自己的目的。这可能是另一个 JavaScript 库，因此脚本之间完全不了解彼此。
+
+然后该脚本可以创建自己的 Symbol(&quot;id&quot;)，像这样：
+
+```js
+// ...
+let id = Symbol(&quot;id&quot;);
+
+user[id] = &quot;Their id value&quot;;
+```
+
+我们的标识符和它们的标识符之间不会有冲突，//因为 Symbol 总是不同的，即使它们有相同的名字//。
+
+……但如果我们处于同样的目的，使用字符串 &quot;id&quot; 而不是用 symbol，那么 就会 ''出现冲突''：
+
+```js
+let user = { name: &quot;John&quot; };
+
+// 我们的脚本使用了 &quot;id&quot; 属性。
+user.id = &quot;Our id value&quot;;
+
+// ……另一个脚本也想将 &quot;id&quot; 用于它的目的……
+user.id = &quot;Their id value&quot;
+
+// 砰！无意中被另一个脚本重写了 id！
+```
+
+!! `跳过`
+
+''Symbol 属性不参与 for..in 循环''
+
+```js
+let id = Symbol(&quot;id&quot;);
+let user = {
+  name: &quot;John&quot;,
+  age: 30,
+  [id]: 123
+};
+
+for (let key in user) alert(key); // name, age (no symbols)
+
+// 使用 Symbol 任务直接访问
+alert( &quot;Direct: &quot; + user[id] );
+```
+
+''Object.keys(xxx)也会忽略'',“隐藏符号属性”原则的一部分
+
+相反，''Object.assign 会同时复制字符串和 symbol 属性''，这里并不矛盾，就是这样设计的。这里的想法是当我们克隆或者合并一个 object 时，通常希望'' 所有 ''属性被复制（包括像 id 这样的 Symbol）。
+
+!! `全局 symbol`
+
+`有时想要名字相同的 Symbol 具有相同的实体`。
+
+例如，应用程序的不同部分想要访问的 Symbol &quot;id&quot; 指的是完全相同的属性。为了实现这一点，可以创建一个 ''全局 Symbol 注册表''。
+
+要从注册表中读取（不存在则创建）Symbol，请使用 Symbol.for(key):
+
+```js
+// 从全局注册表中读取
+let id = Symbol.for(&quot;id&quot;); // 如果该 Symbol 不存在，则创建它
+
+// 再次读取（可能是在代码中的另一个位置）
+let idAgain = Symbol.for(&quot;id&quot;);
+
+// 相同的 Symbol
+alert( id === idAgain ); // true
+```
+---
+
+Symbol 不是 100% 隐藏的。有一个内置方法 Object.getOwnPropertySymbols(obj) 允许我们获取所有的 Symbol。还有一个名为 Reflect.ownKeys(obj) 的方法可以返回一个对象的 所有 键，包括 Symbol。所以它们并不是真正的隐藏。</pre>
 </div>
 <div created="20210203085508722" modified="20210220030931984" tags="React Articles Best-Practices" title="Tao of React - Software Design, Architecture &amp; Best Practices" type="text/x-markdown">
 <pre>[https://alexkondov.com/tao-of-react/](https://alexkondov.com/tao-of-react/)</pre>
