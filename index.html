@@ -16267,7 +16267,7 @@ let john = User(&quot;John&quot;); // 将调用重定向到新用户
 alert(john.name); // John
 ```</pre>
 </div>
-<div created="20210305052952217" modified="20210305074457505" tags="JavaScript javascript.info" title="new操作符">
+<div created="20210305052952217" modified="20210305074759329" tags="JavaScript javascript.info" title="new操作符">
 <pre>当一个函数被使用 new 操作符执行时，它按照以下步骤：
 
 # ''一个新的空对象被创建并分配给 this''
@@ -16294,6 +16294,19 @@ function User(name) {
 * ''如果 return 返回的是一个对象，则返回这个对象，而不是 this''
 * ''如果 return 返回的是一个原始类型，则忽略''
 
+思考题：
+
+&gt; 是否可以创建像 new A()==new B() 这样的函数 A 和 B？
+
+```js
+function A() { ... }
+function B() { ... }
+
+let a = new A;
+let b = new B;
+
+alert( a == b ); // true
+```
 ---
 这是构造器的主要目的 —— 实现''可重用的对象创建''代码</pre>
 </div>
