@@ -16316,12 +16316,20 @@ switch (arg) {
 <div created="20210225055602446" modified="20210225055743295" tags="Articles Deep-Dive lazy-loading" title="The Import On Interaction Pattern">
 <pre>https://addyosmani.com/blog/import-on-interaction/</pre>
 </div>
-<div created="20210305030813763" modified="20210305031022906" tags="JavaScript javascript.info" title="this">
+<div created="20210305030813763" modified="20210305031347826" tags="JavaScript javascript.info" title="this">
 <pre>`this` 的值是在代码运行时计算出来的，它取决于`代码上下文`
 
+* 如果你经常使用其他的编程语言，那么你可能已经习惯了“绑定 this”的概念，即在对象中定义的方法总是有指向该对象的 this。
+
+* 在 JavaScript 中，this 是“自由”的，它的值是在调用时计算出来的，它的值并不取决于方法声明的位置，而是取决于在“点符号前”的是什么对象。
+
+* 在运行时对 this 求值的这个概念既有优点也有缺点。一方面，函数可以被重用于不同的对象。另一方面，更大的灵活性造成了更大的出错的可能。
 
 
-如果 `obj.f()` 被调用了，则 `this` 在 `f` 函数调用期间是 `obj`</pre>
+---
+如果 `obj.f()` 被调用了，则 `this` 在 `f` 函数调用期间是 `obj`
+
+</pre>
 </div>
 <div created="20210203034219063" modified="20210203034432021" tags="Data-Visualization." title="tui.chart" type="text/x-markdown">
 <pre>[https://github.com/nhn/tui.chart](https://github.com/nhn/tui.chart)
