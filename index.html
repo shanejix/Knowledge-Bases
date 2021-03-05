@@ -16336,8 +16336,10 @@ let john = User(&quot;John&quot;); // 将调用重定向到新用户
 alert(john.name); // John
 ```</pre>
 </div>
-<div created="20210305052952217" modified="20210305074759329" tags="JavaScript javascript.info" title="new操作符">
-<pre>当一个函数被使用 new 操作符执行时，它按照以下步骤：
+<div created="20210305052952217" modified="20210305083219619" tags="JavaScript javascript.info" title="new操作符">
+<pre>!! `new`
+
+当一个函数被使用 new 操作符执行时，它按照以下步骤：
 
 # ''一个新的空对象被创建并分配给 this''
 # ''函数体执行。通常它会修改 this，为其添加新的属性''
@@ -16356,6 +16358,9 @@ function User(name) {
   // return this;（隐式返回）
 }
 ```
+---
+!! `return`
+
 通常，构造器没有 return 语句,任务是将所有必要的东西写入 this，并自动转换为结果
 
 但是，如果这有一个 return 语句，那么规则就简单了：
