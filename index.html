@@ -141,6 +141,8 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>?.可选链</li>
+
 <li>$:/config/AutoSave</li>
 
 <li>$:/config/DefaultSidebarTab</li>
@@ -483,6 +485,73 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20210305080608508" modified="20210305082248082" tags="JavaScript javascript.info" title="?.可选链">
+<pre>!! `不存在的属性”的问题`:
+
+```js
+// 获取 user.address.street，而该用户恰好没提供地址信息，会收到一个错误：
+
+let user = {}; // 一个没有 &quot;address&quot; 属性的 user 对象
+
+alert(user.address.street); // Error!
+
+```
+这是预期的结果。JavaScript 的工作原理就是这样的,但是在很多实际场景中，我们''更希望得到的是 undefined 而不是一个错误''。
+
+可能最先想到的方案是在访问该值的属性之前，使用 if 或条件运算符 ? 对该值进行检查，像这样:
+
+```js
+
+let user = {};
+
+alert(user.address ? user.address.street : undefined);
+```
+
+……但是不够优雅，''对于嵌套层次更深的属性就会出现更多次这样的重复，这就是问题了''
+
+例如，让我们尝试获取 user.address.street.name。既需要检查 user.address，又需要检查 user.address.street：
+
+```js
+let user = {}; // user 没有 address 属性
+
+alert(user.address ? user.address.street ? user.address.street.name : null : null);
+```
+
+这样就''太扯淡了''，并且这可能导致写出来的代码很难让别人理解。
+
+更好的实现方式，就是使用 &amp;&amp; 运算符：
+
+```js
+let user = {}; // user 没有 address 属性
+
+alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.street.name ); // undefined（不报错
+```
+
+但仍然不够优雅。
+
+!! `可选链`:
+
+''如果可选链 ?. 前面的部分是 undefined 或者 null，它会停止运算并返回该部分''
+
+''`不要过度使用可选链`'':
+
+
+
+''应该只将 ?. 使用在一些东西`可以不存在(null/undefined)`的地方''
+
+例如，如果根据我们的代码逻辑，user 对象必须存在，但 address 是可选的，那么我们应该这样写 user.address?.street，而不是这样 user?.address?.street。
+
+所以，如果 user 恰巧因为失误变为 undefined，我们会看到一个编程错误并修复它。否则，代码中的错误在不恰当的地方被消除了，这会导致调试更加困难。
+
+
+!! `短路效应`:
+
+如果 ?. 左边部分不存在，就会立即停止运算（“短路效应”）
+
+!! `其它变体：?.()，?.[]`:
+
+可选链 ?. 不是一个运算符，而是一个特殊的语法结构。它还可以与函数和方括号一起使用</pre>
+</div>
 <div created="20210202030853882" modified="20210202030853882" title="$:/config/AutoSave">
 <pre>no</pre>
 </div>
@@ -15132,7 +15201,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="new.target new操作符 this 面向对象编程 Knowledge-Bases" title="$:/StoryList">
+<div list="?.可选链 new.target new操作符 this 面向对象编程 Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
