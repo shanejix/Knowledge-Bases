@@ -459,6 +459,8 @@ Error message and password prompt
 
 <li>数组区间遍历</li>
 
+<li>数组成倍拼接+隐性遍历当前数组</li>
+
 <li>方括号访问属性的灵活性</li>
 
 <li>现代模式，&quot;use strict&quot;</li>
@@ -15215,7 +15217,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210306130819866" list="[[739. 每日温度]] [[503. 下一个更大元素 II⭐⭐⭐]] 利用‘单调栈’求左/右边第一个比当前值大的办法 Knowledge-Bases" modified="20210306130819866" title="$:/StoryList">
+<div created="20210306130819866" list="数组成倍拼接+隐性遍历当前数组 [[739. 每日温度]] [[503. 下一个更大元素 II⭐⭐⭐]] 利用‘单调栈’求左/右边第一个比当前值大的办法 Knowledge-Bases" modified="20210306130819866" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -16182,8 +16184,15 @@ https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-le
 
 https://leetcode-cn.com/problems/subtree-of-another-tree/solution/ling-yi-ge-shu-de-zi-shu-by-leetcode-solution/</pre>
 </div>
-<div created="20210306131346467" modified="20210306131501778" tags="LeetCode Stack" title="739. 每日温度">
-<pre>
+<div created="20210306131346467" modified="20210306132616072" tags="LeetCode Stack" title="739. 每日温度">
+<pre>方法一：单调栈
+
+方法二：倒推法
+
+todo
+
+---
+
 运用到的技巧：
 
 [[利用‘单调栈’求左/右边第一个比当前值大的办法]] 👍👍👍
@@ -17318,6 +17327,18 @@ alert(obj.__proto__); // [object Object] — 值为对象，与预期结果不�
             ...
         }
 }
+```</pre>
+</div>
+<div created="20210306132344925" modified="20210306132525042" tags="CodeSnippets Array" title="数组成倍拼接+隐性遍历当前数组">
+<pre>```js
+
+    const let  len = nums.length;
+
+    for (let i = 0; i &lt; len * 2 - 1; i++) {
+        // num[i%len]
+        ...
+    }
+
 ```</pre>
 </div>
 <div created="20210226023140797" modified="20210226030132119" tags="javascript.info Object JavaScript" title="方括号访问属性的灵活性">
