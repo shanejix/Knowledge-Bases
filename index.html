@@ -15221,7 +15221,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[204. 计数质数⭐]] Knowledge-Bases" title="$:/StoryList">
+<div created="20210307135310264" list="[[204. 计数质数⭐]] Knowledge-Bases" modified="20210307135310264" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -15240,7 +15240,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210307134805838&quot;
+            &quot;text&quot;: &quot;20210307135307788&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -15740,10 +15740,31 @@ https://leetcode-cn.com/problems/min-stack/solution/xiang-xi-tong-su-de-si-lu-fe
 
 </pre>
 </div>
-<div created="20210307134807991" modified="20210307134921823" tags="LeetCode Math" title="204. 计数质数⭐">
+<div created="20210307134807991" modified="20210307135520341" tags="LeetCode Math" title="204. 计数质数⭐">
 <pre>方法一：暴力法
 
 方法二：埃式筛
+
+```js
+
+var countPrimes = function(n) {
+    const isPrime = new Array(n).fill(1);
+    let ans = 0;
+    for (let i = 2; i &lt; n; ++i) {
+        if (isPrime[i]) {
+            ans += 1;
+            for (let j = i * i; j &lt; n; j += i) {
+                isPrime[j] = 0;
+            }
+        }
+    }
+    return ans;
+};
+
+```
+''
+对于一个质数 x，如果按上文说的我们从 2x2x 开始标记其实是冗余的，应该直接从 x⋅x 开始标记，因为 2x,3x, 这些数一定在 x 之前就被其他数的倍数标记过了。例如 22 的所有倍数，33 的所有倍数等。''
+
 
 ---
 https://leetcode-cn.com/problems/count-primes/solution/ji-shu-zhi-shu-by-leetcode-solution/</pre>
