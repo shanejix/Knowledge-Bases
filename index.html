@@ -311,6 +311,8 @@ Error message and password prompt
 
 <li>572. 另一个树的子树</li>
 
+<li>72. 编辑距离⭐⭐⭐</li>
+
 <li>739. 每日温度</li>
 
 <li>a-front-end-developer-using-figma</li>
@@ -15225,7 +15227,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[101. 对称二叉树⭐⭐]] Knowledge-Bases" title="$:/StoryList">
+<div list="[[72. 编辑距离⭐⭐⭐]] Knowledge-Bases" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -15244,7 +15246,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210308125818844&quot;
+            &quot;text&quot;: &quot;20210308144622653&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -16304,6 +16306,101 @@ https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-le
 <pre>虽然是简单题目，但是题解中很多思路有待学习
 
 https://leetcode-cn.com/problems/subtree-of-another-tree/solution/ling-yi-ge-shu-de-zi-shu-by-leetcode-solution/</pre>
+</div>
+<div created="20210308144640109" modified="20210308145636222" tags="LeetCode DynamicProgramming" title="72. 编辑距离⭐⭐⭐">
+<pre>
+
+可以对任意一个单词进行三种操作：
+
+* 插入一个字符；
+
+* 删除一个字符；
+
+* 替换一个字符。
+
+给定了两个单词，设为 A 和 B，这样就能够六种操作方法
+
+* 对单词 A 删除一个字符和对单词 B 插入一个字符是等价的。
+
+* 同理，对单词 B 删除一个字符和对单词 A 插入一个字符也是等价的；
+
+* 对单词 A 替换一个字符和对单词 B 替换一个字符是等价的
+
+''这样以来，本质不同的操作实际上只有三种：''
+
+* 在单词 A 中插入一个字符；
+
+* 在单词 B 中插入一个字符；
+
+* 修改单词 A 的一个字符。
+
+---
+
+```js
+
+/**
+ * @param {string} word1
+ * @param {string} word2
+ * @return {number}
+ */
+var minDistance = function (word1, word2) {
+    let n = word1.length
+    let m = word2.length
+
+    // 有一个字符串为空串的时候
+    if (m * n === 0) {
+        return m + n
+    }
+
+    // 定义dp dp[i][j] : 从s[0,i) 到 s[0,j)的最小操作次数
+    const dp = new Array(n + 1).fill(-1).map(() =&gt; new Array(m + 1).fill(-1))
+
+    console.log(dp)
+
+    // 初始化边界值 - 行首
+    for (let i = 0; i &lt; n + 1; i++) {
+        dp[i][0] = i;
+    }
+
+    // 初始化边界值 - 列首
+    for (let i = 0; i &lt; m + 1; i++) {
+        dp[0][i] = i;
+    }
+
+    console.log(dp)
+
+    // 状态转移
+    for (let i = 1; i &lt; n + 1; i++) {
+        for (let j = 1; j &lt; m + 1; j++) {
+            // 转化为 dp[i][j] 的可能
+
+            // word1 插入：
+            // s[0,i) 到 s[0,j) 先从 s[0,i) 到 s[0,j-1) 再 s[0,j-1) 到 s[0,j) 添加一个元素
+            let left = dp[i][j - 1] + 1
+
+            // word2 插入：
+            // s[0,i) 到 s[0,j) 先从 s[0,i-1) 到 s[0,j) 再 s[0,i-1) 到 s[0,i) 添加一个元素
+            let up = dp[i - 1][j] + 1;
+            
+            // word1 或 word2 替换：
+            // s[0,i) 到 s[0,j) 先从 s[0,i-1) 到 s[0,j-1) 
+            let left_up = dp[i - 1][j - 1];
+
+            // 此时出最后一个字符外其余部分都已经完成，判断末尾字符是否需要替换
+            if (word1[i - 1] !== word2[j - 1]) {
+                left_up += 1;
+            }
+
+            dp[i][j] = Math.min(left, up, left_up);
+        }
+    }
+
+    return dp[n][m]
+};
+
+```
+---
+https://leetcode-cn.com/problems/edit-distance/solution/bian-ji-ju-chi-by-leetcode-solution/</pre>
 </div>
 <div created="20210306131346467" modified="20210306132616072" tags="LeetCode Stack" title="739. 每日温度">
 <pre>方法一：单调栈
