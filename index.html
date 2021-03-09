@@ -277,6 +277,8 @@ Error message and password prompt
 
 <li>101. 对称二叉树⭐⭐</li>
 
+<li>1143. 最长公共子序列</li>
+
 <li>141. 环形链表</li>
 
 <li>155. 最小栈</li>
@@ -15227,7 +15229,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[72. 编辑距离⭐⭐⭐]] Knowledge-Bases" title="$:/StoryList">
+<div created="20210309123328677" list="[[72. 编辑距离⭐⭐⭐]] [[101. 对称二叉树⭐⭐]] [[1143. 最长公共子序列]] Knowledge-Bases" modified="20210309123329776" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210201125052645" modified="20210201125052646" title="$:/temp/HidePluginWarning">
@@ -15246,7 +15248,7 @@ alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.stree
         },
         &quot;$:/info/startup-timestamp&quot;: {
             &quot;title&quot;: &quot;$:/info/startup-timestamp&quot;,
-            &quot;text&quot;: &quot;20210308144622653&quot;
+            &quot;text&quot;: &quot;20210309122738506&quot;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
@@ -15727,6 +15729,62 @@ function check(p, q) {
 ---
 
 ''双指针遍历''在链表，字符串，数组中经常使用，多留意</pre>
+</div>
+<div created="20210309123136612" modified="20210309123424842" tags="LeetCode DynamicProgramming" title="1143. 最长公共子序列">
+<pre>''动态规划 - 常规解法'' : 思路详见 [[72. 编辑距离⭐⭐⭐]]
+
+```js
+
+/**
+ * @param {string} text1
+ * @param {string} text2
+ * @return {number}
+ */
+var longestCommonSubsequence = function (text1, text2) {
+    let n = text1.length;
+    let m = text2.length;
+
+    if (n * m === 0) {
+        return 0;
+    }
+
+    console.log(n, m);
+
+    const dp = new Array(n + 1).fill(0).map(() =&gt; new Array(m + 1).fill(0));
+
+    console.log(dp)
+
+    for (let i = 0; i &lt; n + 1; i++) {
+        dp[i][0] = 0;
+    }
+
+    for (let i = 0; i &lt; m + 1; i++) {
+        dp[0][i] = 0;
+    }
+
+    for (let i = 1; i &lt; n + 1; i++) {
+        for (let j = 1; j &lt; m + 1; j++) {
+
+            console.log(text1[i - 1], text2[j - 1]);
+
+            if (text1[i - 1] === text2[j - 1]) {
+                dp[i][j] = dp[i - 1][j - 1] + 1;
+            } else {
+                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+            }
+        }
+    }
+
+    console.log(dp)
+
+    return dp[n][m];
+};
+```
+
+类似：
+
+[[72. 编辑距离⭐⭐⭐]]
+</pre>
 </div>
 <div created="20210305134151067" modified="20210305142257383" tags="LeetCode HashTable LinkedList" title="141. 环形链表">
 <pre>方法一：哈希table
@@ -16307,9 +16365,8 @@ https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-le
 
 https://leetcode-cn.com/problems/subtree-of-another-tree/solution/ling-yi-ge-shu-de-zi-shu-by-leetcode-solution/</pre>
 </div>
-<div created="20210308144640109" modified="20210308145636222" tags="LeetCode DynamicProgramming" title="72. 编辑距离⭐⭐⭐">
+<div created="20210308144640109" modified="20210309123503638" tags="LeetCode DynamicProgramming" title="72. 编辑距离⭐⭐⭐">
 <pre>
-
 可以对任意一个单词进行三种操作：
 
 * 插入一个字符；
@@ -16399,6 +16456,11 @@ var minDistance = function (word1, word2) {
 };
 
 ```
+
+类似：
+
+[[1143. 最长公共子序列]]
+
 ---
 https://leetcode-cn.com/problems/edit-distance/solution/bian-ji-ju-chi-by-leetcode-solution/</pre>
 </div>
